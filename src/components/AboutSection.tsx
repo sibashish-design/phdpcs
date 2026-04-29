@@ -81,7 +81,7 @@ export default function AboutSection() {
                 OUR OBJECTIVE
               </h3>
               <p className="text-lg leading-relaxed text-white/80">
-                The Uttarakhand Pharma & Healthcare Conclave and Samman 2025
+                The Uttarakhand Pharma & Healthcare Conclave and Samman 2026
                 aims to:
               </p>
 

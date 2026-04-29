@@ -102,7 +102,7 @@ export default function AboutPage() {
                 About PHDCCI
               </div>
               <div className="text-sm sm:text-base md:text-lg font-medium mt-1 tracking-wide">
-                1905 - 2025
+                1905 - 2026
               </div>
             </div>
           </div>
@@ -116,13 +116,7 @@ export default function AboutPage() {
           {/* Paragraph Content */}
           <div className="space-y-6 text-base sm:text-lg md:text-xl leading-relaxed max-w-5xl mx-auto px-2">
             <p>
-              PHDCCI has been working as a catalyst for the promotion of Indian
-              industry, trade and entrepreneurship for the past 120 years. It is
-              a forward looking, proactive and dynamic PAN-India apex
-              organization. As a partner in progress with industry and
-              government, PHDCCI works at the grass roots level with strong
-              national and international linkages for propelling progress,
-              harmony and integrated development of the Indian economy.
+              India’s healthcare and pharmaceucal sector connues to witness rapid expansion, emerging as a key contributor to economic growth, employment generaon, and innovaon. Uarakhand, with its established pharmaceucal manufacturing clusters, growing healthcare infrastructure, and global posioning in AYUSH and wellness, is uniquely placed to lead this transformaon. The 1st Uarakhand Pharma & Healthcare Conclave & Samman 2026, organized by PHDCCI, successfully created a mul-stakeholder plaorm bringing together government leaders, healthcare instuons, pharma manufacturers, AYUSH praconers, and innovators.
             </p>
             <p>
               PHDCCI, acting as the &quot;Voice of Industry &amp; Trade&quot;

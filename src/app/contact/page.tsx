@@ -35,7 +35,7 @@ export default function ContactPage() {
     {
       title: "Event Location",
       address: "Dehradun, Uttarakhand",
-      phone: "Event Date: September 26, 2025",
+      phone: "Event Date: June 20, 2026",
       email: "PHD Chamber of Commerce",
       icon: Globe,
       color: "bg-purple-50 text-purple-600"
@@ -43,7 +43,7 @@ export default function ContactPage() {
   ];
 
   const officeHours = [
-    { day: "Event Date", hours: "September 26, 2025" },
+    { day: "Event Date", hours: "June 20, 2026" },
     { day: "Location", hours: "Dehradun, Uttarakhand" },
     { day: "Organization", hours: "PHD Chamber of Commerce and Industry" },
     { day: "Registration", hours: "Open Now" },

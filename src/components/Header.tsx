@@ -127,7 +127,7 @@ const Header = () => {
           </div>
         </div>
       </header>
-      <div className="w-full bg-yellow-100 text-yellow-900 py-2 shadow-inner sticky top-0 z-40 overflow-hidden">
+      <div className="hidden">
         <div className="flex gap-8 animate-marquee whitespace-nowrap text-sm md:text-base font-medium">
           <span className="font-semibold">
             📢 For Sponsorship, Speaking Slot and Space booking contact:
