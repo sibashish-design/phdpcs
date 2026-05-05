@@ -206,7 +206,7 @@ const Footer = () => {
                       Event Date
                     </p>
                     <p className="text-white text-sm font-medium">
-                      June 20, 2026
+                      June 24, 2026
                     </p>
                   </div>
                 </div>
