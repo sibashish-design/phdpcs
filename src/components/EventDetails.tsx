@@ -23,7 +23,7 @@ const EventDetails = () => {
                   </div>
                   <div>
                     <p className="text-sm text-gray-500">Event Date</p>
-                    <p className="font-semibold text-gray-900">June 20, 2026</p>
+                    <p className="font-semibold text-gray-900">June 24, 2026</p>
                   </div>
                 </div>
                 

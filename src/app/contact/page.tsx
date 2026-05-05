@@ -36,6 +36,7 @@ export default function ContactPage() {
       title: "Vinaypal Singh Rawat",
       address: "Senior Resident Officer",
       phone: "+91 95605 00181",
+      email: "vinaypal.rawat@phdcci.in",
       icon: MessageSquare,
       color: "bg-blue-50 text-blue-600"
     },

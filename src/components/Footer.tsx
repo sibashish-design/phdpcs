@@ -181,6 +181,41 @@ const Footer = () => {
                 </div>
               </div>
 
+              {/* Vinaypal Singh Rawat Contact */}
+              <div className="bg-white/10 rounded-lg p-3 backdrop-blur-sm shadow-md shadow-white/20 border border-white/20">
+                <h5 className="text-white font-semibold mb-2 text-sm">
+                  Vinaypal Singh Rawat
+                </h5>
+                <div className="space-y-1">
+                  <div className="flex items-center space-x-2 group">
+                    <div className="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-white/30 transition-colors">
+                      <Mail className="w-4 h-4 text-white" />
+                    </div>
+                    <div>
+                      <a
+                        href="mailto:vinaypal.rawat@phdcci.in"
+                        className="text-white/80 hover:text-white transition-colors text-sm font-medium"
+                      >
+                        vinaypal.rawat@phdcci.in
+                      </a>
+                    </div>
+                  </div>
+                  <div className="flex items-center space-x-2 group">
+                    <div className="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-white/30 transition-colors">
+                      <Phone className="w-4 h-4 text-white" />
+                    </div>
+                    <div>
+                      <a
+                        href="tel:+919560500181"
+                        className="text-white/80 hover:text-white transition-colors text-sm font-medium"
+                      >
+                        +91 95605 00181
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
               {/* Location and Event Date */}
               <div className="space-y-2 mt-2">
                 <div className="flex items-center space-x-2 group">
