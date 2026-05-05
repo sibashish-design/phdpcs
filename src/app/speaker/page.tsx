@@ -25,13 +25,6 @@ const speakers = [
     image: "/speaker003.png",
   },
   {
-    id: 6, // ✅ fixed unique id
-    name: "Dr. Karthik Ramesh",
-    title: "Director, Dr. Hiremath Global",
-    bio: "",
-    image: "",
-  },
-  {
     id: 7, // ✅ fixed unique id
     name: "Dr Vijay Kumar Jogdande (IAS)",
     title: "Director, Ayurvedic & Unani Service, Uttarakhand",
