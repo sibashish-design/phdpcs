@@ -107,28 +107,24 @@ export default function AboutPage() {
             </div>
           </div>
 
-          {/* Subtitle */}
-          <p className="text-lg sm:text-xl md:text-2xl mb-10 max-w-3xl mx-auto leading-relaxed">
-            Celebrating 120 years of excellence as a catalyst for Indian
-            industry, trade and entrepreneurship.
-          </p>
+         
 
           {/* Paragraph Content */}
           <div className="space-y-6 text-base sm:text-lg md:text-xl leading-relaxed max-w-5xl mx-auto px-2">
             <p>
-              India’s healthcare and pharmaceutical sector continues to witness rapid expansion, emerging as a key contributor to economic growth, employment generation, and innovation. Uttarakhand, with its well-established pharmaceutical manufacturing clusters, expanding healthcare infrastructure, and strong positioning in AYUSH and wellness, is uniquely placed to lead this transformation.
-            </p>
-            <p>
-              The PHDCCI Himalayan Pharma Conclave and Samman 2026 (2nd Annual Edition) builds on the success of its previous edition, which brought together key stakeholders across the ecosystem — including government leaders, healthcare institutions, pharmaceutical manufacturers, AYUSH practitioners, and innovators. The platform is designed to foster collaboration, showcase excellence, and accelerate growth across the healthcare and pharma sectors, particularly in the Himalayan region.
-            </p>
-            <p>
-              The Samman programme recognises outstanding contributions across 49 carefully defined categories spanning public health, private healthcare, AYUSH, healthcare manufacturing, and cross-track sustainability and community initiatives, providing a structured and credible framework for industry recognition.
-            </p>
-            <p>
-              PHDCCI, as the Voice of Industry and Trade, represents a wide network of over 150,000 large, medium, and small enterprises. Leveraging its deep industry expertise and multi-sectoral engagement, the organisation continues to play a pivotal role in shaping policy dialogue, fostering innovation, and strengthening India’s economic growth trajectory.
+             PHDCCI, as the Voice of Industry and Trade, represents a wide network of over 150,000 large, medium, and small enterprises. Leveraging its deep industry expertise and multi-sectoral engagement, the organisation continues to play a pivotal role in shaping policy dialogue, fostering innovation, and strengthening India’s economic growth trajectory.
             </p>
             <p>
               At the global level, PHDCCI actively collaborates with Embassies and High Commissions in India and abroad to facilitate international partnerships, bring in global best practices, and unlock new business opportunities for Indian enterprises.
+            </p>
+            <p>
+              India’s healthcare and pharmaceutical sector continues to witness rapid expansion, emerging as a key contributor to economic growth, employment generation, and innovation. Uttarakhand, with its well-established pharmaceutical manufacturing clusters, expanding healthcare infrastructure, and strong positioning in AYUSH and wellness, is uniquely placed to lead this transformation.
+            </p>
+            <p>
+              Uttarakhnd Pharma, Healthcare & Ayush Conclave 2026 (2nd Annual Edition) builds on the success of its previous edition, which brought together key stakeholders across the ecosystem — including government leaders, healthcare institutions, pharmaceutical manufacturers, AYUSH practitioners, and innovators. The platform is designed to foster collaboration, showcase excellence, and accelerate growth across the healthcare and pharma sectors, particularly in the Himalayan region.
+            </p>
+            <p>
+              The Samman programme recognises outstanding contributions across 49 carefully defined categories spanning public health, private healthcare, AYUSH, healthcare manufacturing, and cross-track sustainability and community initiatives, providing a structured and credible framework for industry recognition.
             </p>
           </div>
         </div>

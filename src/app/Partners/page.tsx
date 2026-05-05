@@ -382,7 +382,7 @@ const PartnersPage = () => {
                       <br />
                       media handles of Pharma and Healthcare
                       <br />
-                      Samman and Conclave 2025
+                      Samman and Conclave 2026
                     </td>
                     <td className="p-4 text-center border border-[#0f6f73]/20 text-[#0a2540]">
                       <span className="text-[#22c55e] text-xl font-bold">✓</span>
@@ -404,7 +404,7 @@ const PartnersPage = () => {
                     <td className="p-4 text-left border border-[#0f6f73]/20 text-[#0a2540]">
                       <strong>Networking Table Space</strong> at the Pharma and
                       <br />
-                      Healthcare Samman and Conclave 2025 Venue
+                      Healthcare Samman and Conclave 2026 Venue
                     </td>
                     <td className="p-4 text-center border border-[#0f6f73]/20 text-[#0a2540]">
                       <span className="text-[#22c55e] text-xl font-bold">✓</span>
