@@ -56,7 +56,7 @@ const PartnersPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[#1FA58A] to-[#145C52]">
-              Our Partners
+              Our 2025 Partners
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               We are proud to collaborate with leading organizations committed
@@ -142,7 +142,7 @@ const PartnersPage = () => {
                     </div>
                   </div>
                 </SwiperSlide>
-                
+
                 {/* Vivo Partner */}
                 <SwiperSlide>
                   <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 flex flex-col items-center h-[280px]">
@@ -169,119 +169,141 @@ const PartnersPage = () => {
               </span>
             </h2>
 
-            <div className="overflow-x-auto">
-              <table className="w-full border-collapse bg-white shadow-lg rounded-lg overflow-hidden">
+            <div className="overflow-x-auto bg-gradient-to-br from-[#e6f4f5] to-[#cfe9eb] p-6 rounded-2xl shadow-xl border border-[#0f6f73]/20">
+              <table className="w-full border border-[#0f6f73]/30 text-[#0a2540]">
                 <thead>
-                  <tr>
-                    <th className="bg-[#f8d9b5] text-gray-800 p-4 text-center border border-gray-200">
-                      Sr. No.
-                    </th>
-                    <th className="bg-[#f8d9b5] text-gray-800 p-4 text-center border border-gray-200">
-                      Deliverables
-                    </th>
-                    <th className="bg-[#4b6c3e] text-white p-4 text-center border border-gray-200">
-                      <div>Platinum Partner</div>
-                      <div className="font-normal mt-1">INR 5 Lakh</div>
-                    </th>
-                    <th className="bg-[#a30000] text-white p-4 text-center border border-gray-200">
-                      <div>Diamond Partner</div>
-                      <div className="font-normal mt-1">INR 3 Lakh</div>
-                    </th>
-                    <th className="bg-[#2e5b8e] text-white p-4 text-center border border-gray-200">
-                      <div>Gold Partner</div>
-                      <div className="font-normal mt-1">INR 2 Lakh</div>
-                    </th>
-                    <th className="bg-[#d97706] text-white p-4 text-center border border-gray-200">
-                      <div>Silver Partner</div>
-                      <div className="font-normal mt-1">INR 1 Lakh</div>
-                    </th>
-                  </tr>
-                </thead>
+  <tr className="text-sm font-semibold">
+
+    <th className="p-4 border border-[#0f6f73]/20 text-left bg-[#e6f4f5]">
+      Sr. No.
+    </th>
+
+    <th className="p-4 border border-[#0f6f73]/20 text-middle bg-[#e6f4f5]">
+      Deliverables
+    </th>
+
+    {/* Platinum */}
+    <th className="relative p-4 text-white border border-[#0f6f73]/30 bg-[#4b6c3e] overflow-hidden">
+
+  <span className="relative z-10">
+    Platinum <br /> INR 7 Lakh
+  </span>
+
+  <span className="shine shine-delay-1"></span>
+
+</th>
+
+    {/* Diamond */}
+    <th className="relative p-4 text-white border border-[#0f6f73]/20 bg-[#a30000] overflow-hidden group">
+      <span className="relative z-10">
+        Diamond <br /> INR 5 Lakh
+      </span>
+      <span className="shine shine-delay-2"></span>
+    </th>
+
+    {/* Gold */}
+    <th className="relative p-4 text-white border border-[#0f6f73]/20 bg-[#2e5b8e] overflow-hidden group">
+      <span className="relative z-10">
+        Gold <br /> INR 3 Lakh
+      </span>
+      <span className="shine shine-delay-3"></span>
+    </th>
+
+    {/* Silver */}
+    <th className="relative p-4 text-white border border-[#0f6f73]/20 bg-[#d97706] overflow-hidden group rounded-tr-xl">
+      <span className="relative z-10">
+        Silver <br /> INR 2 Lakh
+      </span>
+      <span className="shine shine-delay-4"></span>
+    </th>
+
+  </tr>
+</thead>
                 <tbody>
-                  <tr>
-                    <td className="p-4 text-center border border-gray-200">
+                  <tr className="border-b border-[#0f6f73]/10 hover:bg-[#0f6f73]/5 transition">
+                    <td className="p-4 text-center border border-[#0f6f73]/20 text-[#0a2540]">
                       1
                     </td>
-                    <td className="p-4 text-center border border-gray-200">
+                    <td className="p-4 text-left border border-[#0f6f73]/20 text-[#0a2540]">
                       <strong>Speaker Invite</strong> to the CEO/MD of the
                       company
                       <br />
                       In the Inaugural Session
                     </td>
-                    <td className="p-4 text-center border border-gray-200">
+                    <td className="p-4 text-center border border-[#0f6f73]/20 text-[#0a2540]">
                       <span className="text-green-600 text-2xl">&#10003;</span>
                     </td>
-                    <td className="p-4 text-center border border-gray-200">
+                    <td className="p-4 text-center border border-[#0f6f73]/20 text-[#0a2540]">
                       <span className="text-green-600 text-2xl">&#10003;</span>
                     </td>
-                    <td className="p-4 text-center border border-gray-200"></td>
-                    <td className="p-4 text-center border border-gray-200"></td>
+                    <td className="p-4 text-center border border-[#0f6f73]/20 text-[#0a2540]"></td>
+                    <td className="p-4 text-center border border-[#0f6f73]/20 text-[#0a2540]"></td>
                   </tr>
-                  <tr>
-                    <td className="p-4 text-center border border-gray-200">
+                  <tr className="border-b border-[#0f6f73]/10 hover:bg-[#0f6f73]/5 transition">
+                    <td className="p-4 text-center border border-[#0f6f73]/20 text-[#0a2540]">
                       2
                     </td>
-                    <td className="p-4 text-center border border-gray-200">
+                    <td className="p-4 text-left border border-[#0f6f73]/20 text-[#0a2540]">
                       <strong>Corporate Video Presentation</strong>-<br />
                       Promotional AV to be played during the breaks.
                     </td>
-                    <td className="p-4 text-center border border-gray-200">
+                    <td className="p-4 text-center border border-[#0f6f73]/20 text-[#0a2540]">
                       <span className="text-green-600 text-2xl">&#10003;</span>
                     </td>
-                    <td className="p-4 text-center border border-gray-200">
+                    <td className="p-4 text-center border border-[#0f6f73]/20 text-[#0a2540]">
                       <span className="text-green-600 text-2xl">&#10003;</span>
                     </td>
-                    <td className="p-4 text-center border border-gray-200"></td>
-                    <td className="p-4 text-center border border-gray-200"></td>
+                    <td className="p-4 text-center border border-[#0f6f73]/20 text-[#0a2540]"></td>
+                    <td className="p-4 text-center border border-[#0f6f73]/20 text-[#0a2540]"></td>
                   </tr>
-                  <tr>
-                    <td className="p-4 text-center border border-gray-200">
+                  <tr className="border-b border-[#0f6f73]/10 hover:bg-[#0f6f73]/5 transition">
+                    <td className="p-4 text-center border border-[#0f6f73]/20 text-[#0a2540]">
                       3
                     </td>
-                    <td className="p-4 text-center border border-gray-200">
+                    <td className="p-4 text-left border border-[#0f6f73]/20 text-[#0a2540]">
                       <strong>Publicity Material of the Organization</strong>:
                       <br />
                       Company brochure & publicity material to be part of
                       Delegate Kit
                     </td>
-                    <td className="p-4 text-center border border-gray-200">
+                    <td className="p-4 text-center border border-[#0f6f73]/20 text-[#0a2540]">
                       <span className="text-green-600 text-2xl">&#10003;</span>
                     </td>
-                    <td className="p-4 text-center border border-gray-200">
+                    <td className="p-4 text-center border border-[#0f6f73]/20 text-[#0a2540]">
                       <span className="text-green-600 text-2xl">&#10003;</span>
                     </td>
-                    <td className="p-4 text-center border border-gray-200">
-                      <span className="text-green-600 text-2xl">✓</span>
+                    <td className="p-4 text-center border border-[#0f6f73]/20 text-[#0a2540]">
+                      <span className="text-[#22c55e] text-xl font-bold">✓</span>
                     </td>
-                    <td className="p-4 text-center border border-gray-200"></td>
+                    <td className="p-4 text-center border border-[#0f6f73]/20 text-[#0a2540]"></td>
                   </tr>
-                  <tr>
-                    <td className="p-4 text-center border border-gray-200">
+                  <tr className="border-b border-[#0f6f73]/10 hover:bg-[#0f6f73]/5 transition">
+                    <td className="p-4 text-center border border-[#0f6f73]/20 text-[#0a2540]">
                       4
                     </td>
-                    <td className="p-4 text-center border border-gray-200">
+                    <td className="p-4 text-left border border-[#0f6f73]/20 text-[#0a2540]">
                       <strong>Acknowledgement of Association</strong>-Pre and
                       <br />
                       During the Event
                     </td>
-                    <td className="p-4 text-center border border-gray-200">
-                      <span className="text-green-600 text-2xl">✓</span>
+                    <td className="p-4 text-center border border-[#0f6f73]/20 text-[#0a2540]">
+                      <span className="text-[#22c55e] text-xl font-bold">✓</span>
                     </td>
-                    <td className="p-4 text-center border border-gray-200">
-                      <span className="text-green-600 text-2xl">✓</span>
+                    <td className="p-4 text-center border border-[#0f6f73]/20 text-[#0a2540]">
+                      <span className="text-[#22c55e] text-xl font-bold">✓</span>
                     </td>
-                    <td className="p-4 text-center border border-gray-200">
-                      <span className="text-green-600 text-2xl">✓</span>
+                    <td className="p-4 text-center border border-[#0f6f73]/20 text-[#0a2540]">
+                      <span className="text-[#22c55e] text-xl font-bold">✓</span>
                     </td>
-                    <td className="p-4 text-center border border-gray-200">
-                      <span className="text-green-600 text-2xl">✓</span>
+                    <td className="p-4 text-center border border-[#0f6f73]/20 text-[#0a2540]">
+                      <span className="text-[#22c55e] text-xl font-bold">✓</span>
                     </td>
                   </tr>
-                  <tr>
-                    <td className="p-4 text-center border border-gray-200">
+                  <tr className="border-b border-[#0f6f73]/10 hover:bg-[#0f6f73]/5 transition">
+                    <td className="p-4 text-center border border-[#0f6f73]/20 text-[#0a2540]">
                       5
                     </td>
-                    <td className="p-4 text-center border border-gray-200">
+                    <td className="p-4 text-left border border-[#0f6f73]/20 text-[#0a2540]">
                       <strong>Prominent Organization Branding</strong>{" "}
                       (Strategic
                       <br />
@@ -289,24 +311,24 @@ const PartnersPage = () => {
                       <br />
                       Sponsor Standees & E-mailers)
                     </td>
-                    <td className="p-4 text-center border border-gray-200">
-                      <span className="text-green-600 text-2xl">✓</span>
+                    <td className="p-4 text-center border border-[#0f6f73]/20 text-[#0a2540]">
+                      <span className="text-[#22c55e] text-xl font-bold">✓</span>
                     </td>
-                    <td className="p-4 text-center border border-gray-200">
-                      <span className="text-green-600 text-2xl">✓</span>
+                    <td className="p-4 text-center border border-[#0f6f73]/20 text-[#0a2540]">
+                      <span className="text-[#22c55e] text-xl font-bold">✓</span>
                     </td>
-                    <td className="p-4 text-center border border-gray-200">
-                      <span className="text-green-600 text-2xl">✓</span>
+                    <td className="p-4 text-center border border-[#0f6f73]/20 text-[#0a2540]">
+                      <span className="text-[#22c55e] text-xl font-bold">✓</span>
                     </td>
-                    <td className="p-4 text-center border border-gray-200">
-                      <span className="text-green-600 text-2xl">✓</span>
+                    <td className="p-4 text-center border border-[#0f6f73]/20 text-[#0a2540]">
+                      <span className="text-[#22c55e] text-xl font-bold">✓</span>
                     </td>
                   </tr>
-                  <tr>
-                    <td className="p-4 text-center border border-gray-200">
+                  <tr className="border-b border-[#0f6f73]/10 hover:bg-[#0f6f73]/5 transition">
+                    <td className="p-4 text-center border border-[#0f6f73]/20 text-[#0a2540]">
                       6
                     </td>
-                    <td className="p-4 text-center border border-gray-200">
+                    <td className="p-4 text-left border border-[#0f6f73]/20 text-[#0a2540]">
                       <strong>
                         Individual Promotional Display of the Organization
                       </strong>{" "}
@@ -315,46 +337,46 @@ const PartnersPage = () => {
                       to be displayed at the reception of Venue &<br />
                       to be bought by the organization on the day of event)
                     </td>
-                    <td className="p-4 text-center border border-gray-200">
+                    <td className="p-4 text-center border border-[#0f6f73]/20 text-[#0a2540]">
                       3 Standees
                     </td>
-                    <td className="p-4 text-center border border-gray-200">
+                    <td className="p-4 text-center border border-[#0f6f73]/20 text-[#0a2540]">
                       2 Standees
                     </td>
-                    <td className="p-4 text-center border border-gray-200">
+                    <td className="p-4 text-center border border-[#0f6f73]/20 text-[#0a2540]">
                       1 Standee
                     </td>
-                    <td className="p-4 text-center border border-gray-200">
+                    <td className="p-4 text-center border border-[#0f6f73]/20 text-[#0a2540]">
                       1 Standee
                     </td>
                   </tr>
-                  <tr>
-                    <td className="p-4 text-center border border-gray-200">
+                  <tr className="border-b border-[#0f6f73]/10 hover:bg-[#0f6f73]/5 transition">
+                    <td className="p-4 text-center border border-[#0f6f73]/20 text-[#0a2540]">
                       7
                     </td>
-                    <td className="p-4 text-center border border-gray-200">
+                    <td className="p-4 text-left border border-[#0f6f73]/20 text-[#0a2540]">
                       <strong>Print Media Branding:</strong> Colored Company
                       <br />
                       Advertisement in PHDCCI&apos;s widely circulated
                       <br />
                       monthly bulletin
                     </td>
-                    <td className="p-4 text-center border border-gray-200">
+                    <td className="p-4 text-center border border-[#0f6f73]/20 text-[#0a2540]">
                       1 Full Page
                     </td>
-                    <td className="p-4 text-center border border-gray-200">
+                    <td className="p-4 text-center border border-[#0f6f73]/20 text-[#0a2540]">
                       Half Page
                     </td>
-                    <td className="p-4 text-center border border-gray-200">
+                    <td className="p-4 text-center border border-[#0f6f73]/20 text-[#0a2540]">
                       Qtr page
                     </td>
-                    <td className="p-4 text-center border border-gray-200"></td>
+                    <td className="p-4 text-center border border-[#0f6f73]/20 text-[#0a2540]"></td>
                   </tr>
-                  <tr>
-                    <td className="p-4 text-center border border-gray-200">
+                  <tr className="border-b border-[#0f6f73]/10 hover:bg-[#0f6f73]/5 transition">
+                    <td className="p-4 text-center border border-[#0f6f73]/20 text-[#0a2540]">
                       8
                     </td>
-                    <td className="p-4 text-center border border-gray-200">
+                    <td className="p-4 text-left border border-[#0f6f73]/20 text-[#0a2540]">
                       <strong>Social Media Branding</strong> :Logo branding on
                       social
                       <br />
@@ -362,54 +384,54 @@ const PartnersPage = () => {
                       <br />
                       Samman and Conclave 2025
                     </td>
-                    <td className="p-4 text-center border border-gray-200">
-                      <span className="text-green-600 text-2xl">✓</span>
+                    <td className="p-4 text-center border border-[#0f6f73]/20 text-[#0a2540]">
+                      <span className="text-[#22c55e] text-xl font-bold">✓</span>
                     </td>
-                    <td className="p-4 text-center border border-gray-200">
-                      <span className="text-green-600 text-2xl">✓</span>
+                    <td className="p-4 text-center border border-[#0f6f73]/20 text-[#0a2540]">
+                      <span className="text-[#22c55e] text-xl font-bold">✓</span>
                     </td>
-                    <td className="p-4 text-center border border-gray-200">
-                      <span className="text-green-600 text-2xl">✓</span>
+                    <td className="p-4 text-center border border-[#0f6f73]/20 text-[#0a2540]">
+                      <span className="text-[#22c55e] text-xl font-bold">✓</span>
                     </td>
-                    <td className="p-4 text-center border border-gray-200">
-                      <span className="text-green-600 text-2xl">✓</span>
+                    <td className="p-4 text-center border border-[#0f6f73]/20 text-[#0a2540]">
+                      <span className="text-[#22c55e] text-xl font-bold">✓</span>
                     </td>
                   </tr>
-                  <tr>
-                    <td className="p-4 text-center border border-gray-200">
+                  <tr className="border-b border-[#0f6f73]/10 hover:bg-[#0f6f73]/5 transition">
+                    <td className="p-4 text-center border border-[#0f6f73]/20 text-[#0a2540]">
                       9
                     </td>
-                    <td className="p-4 text-center border border-gray-200">
+                    <td className="p-4 text-left border border-[#0f6f73]/20 text-[#0a2540]">
                       <strong>Networking Table Space</strong> at the Pharma and
                       <br />
                       Healthcare Samman and Conclave 2025 Venue
                     </td>
-                    <td className="p-4 text-center border border-gray-200">
-                      <span className="text-green-600 text-2xl">✓</span>
+                    <td className="p-4 text-center border border-[#0f6f73]/20 text-[#0a2540]">
+                      <span className="text-[#22c55e] text-xl font-bold">✓</span>
                     </td>
-                    <td className="p-4 text-center border border-gray-200">
-                      <span className="text-green-600 text-2xl">✓</span>
+                    <td className="p-4 text-center border border-[#0f6f73]/20 text-[#0a2540]">
+                      <span className="text-[#22c55e] text-xl font-bold">✓</span>
                     </td>
-                    <td className="p-4 text-center border border-gray-200"></td>
-                    <td className="p-4 text-center border border-gray-200"></td>
+                    <td className="p-4 text-center border border-[#0f6f73]/20 text-[#0a2540]"></td>
+                    <td className="p-4 text-center border border-[#0f6f73]/20 text-[#0a2540]"></td>
                   </tr>
-                  <tr>
-                    <td className="p-4 text-center border border-gray-200">
+                  <tr className="border-b border-[#0f6f73]/10 hover:bg-[#0f6f73]/5 transition">
+                    <td className="p-4 text-center border border-[#0f6f73]/20 text-[#0a2540]">
                       10
                     </td>
-                    <td className="p-4 text-center border border-gray-200">
+                    <td className="p-4 text-left border border-[#0f6f73]/20 text-[#0a2540]">
                       <strong>Complimentary Delegate Invitations</strong>
                     </td>
-                    <td className="p-4 text-center border border-gray-200">
+                    <td className="p-4 text-center border border-[#0f6f73]/20 text-[#0a2540]">
                       5 Delegates
                     </td>
-                    <td className="p-4 text-center border border-gray-200">
+                    <td className="p-4 text-center border border-[#0f6f73]/20 text-[#0a2540]">
                       2 Delegates
                     </td>
-                    <td className="p-4 text-center border border-gray-200">
+                    <td className="p-4 text-center border border-[#0f6f73]/20 text-[#0a2540]">
                       2 Delegates
                     </td>
-                    <td className="p-4 text-center border border-gray-200">
+                    <td className="p-4 text-center border border-[#0f6f73]/20 text-[#0a2540]">
                       1 Delegate
                     </td>
                   </tr>
@@ -433,28 +455,28 @@ const PartnersPage = () => {
                   <h3 className="text-lg font-bold text-gray-900 mb-2">
                     Platinum Partner
                   </h3>
-                  <p className="text-[#4b6c3e] font-bold">₹5,00,000</p>
+                  <p className="text-[#4b6c3e] font-bold">₹7,00,000</p>
                 </div>
 
                 <div className="bg-gradient-to-br from-[#a30000]/10 to-[#a30000]/20 p-6 rounded-xl text-center">
                   <h3 className="text-lg font-bold text-gray-900 mb-2">
                     Diamond Partner
                   </h3>
-                  <p className="text-[#a30000] font-bold">₹3,00,000</p>
+                  <p className="text-[#a30000] font-bold">₹5,00,000</p>
                 </div>
 
                 <div className="bg-gradient-to-br from-[#2e5b8e]/10 to-[#2e5b8e]/20 p-6 rounded-xl text-center">
                   <h3 className="text-lg font-bold text-gray-900 mb-2">
                     Gold Partner
                   </h3>
-                  <p className="text-[#2e5b8e] font-bold">₹2,00,000</p>
+                  <p className="text-[#2e5b8e] font-bold">₹3,00,000</p>
                 </div>
 
                 <div className="bg-gradient-to-br from-[#d97706]/10 to-[#d97706]/20 p-6 rounded-xl text-center">
                   <h3 className="text-lg font-bold text-gray-900 mb-2">
                     Silver Partner
                   </h3>
-                  <p className="text-[#d97706] font-bold">₹1,00,000</p>
+                  <p className="text-[#d97706] font-bold">₹2,00,000</p>
                 </div>
               </div>
 

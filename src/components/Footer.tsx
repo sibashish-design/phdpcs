@@ -265,7 +265,7 @@ const Footer = () => {
       </a>
     </p>
     <p className="text-white/60 text-center text-sm">
-      &copy; 2026 Uttarakhand Pharma & Healthcare Conclave. All rights reserved.
+      &copy; 2026 Uttarakhand Pharma & Healthcare & AYUSH Conclave. All rights reserved.
     </p>
   </div>
 </div>

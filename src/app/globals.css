@@ -39,3 +39,43 @@ body {
   max-width: 600px;
   line-height: 1.6;
 }
+
+@keyframes smooth-shine {
+  0% {
+    transform: translateX(-120%);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.45;
+  }
+  80% {
+    opacity: 0.25;
+  }
+  100% {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+}
+
+/* main shine */
+.shine {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    110deg,
+    transparent 30%,
+    rgba(255,255,255,0.25) 50%,
+    transparent 70%
+  );
+  animation: smooth-shine 5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* delays for wave effect */
+.shine-delay-1 { animation-delay: 0s; }
+.shine-delay-2 { animation-delay: 1.2s; }
+.shine-delay-3 { animation-delay: 2.4s; }
+.shine-delay-4 { animation-delay: 3.6s; }
