@@ -24,8 +24,8 @@ const navLinks = [
   { name: "About Us", href: "/about", icon: Info },
   { name: "Speaker", href: "/speaker", icon: Mic },
   { name: "Partners", href: "/Partners", icon: Building },
-  { name: "CONTACT US", href: "/contact", icon: Users },
-  { name: "NOMINATION CATEGORIES", href: "/products", icon: ShoppingCart },
+  { name: "Contact Us", href: "/contact", icon: Users },
+  { name: "Nomination Catgories", href: "/products", icon: ShoppingCart },
 ];
 
 const Header = () => {

@@ -13,7 +13,7 @@ const speakers = [
   {
     id: 1,
     name: "Mr. Vineet Kumar Gupta",
-    title: "Co-Chair PHDCCI Uttarakhand Chapter",
+    title: "Chair PHDCCI Uttarakhand Chapter",
     bio: "Managing Director G B Equipment System LTD",
     image: "/vineetkumar1.png",
   },

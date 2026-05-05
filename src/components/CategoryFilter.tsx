@@ -18,10 +18,15 @@ const CategoryFilter: React.FC<CategoryFilterProps> = ({
       {categories.map((category) => (
         <Button
           key={category}
-          variant={selectedCategory === category ? 'default' : 'outline'}
           size="sm"
           onClick={() => onCategoryChange(category)}
-          className="transition-all duration-200"
+          className={`transition-all duration-200 border rounded-full px-4 py-2 font-medium
+            ${
+              selectedCategory === category
+                ? "bg-[#0f6f73] text-white border-[#0f6f73]"
+                : "bg-transparent text-[#0a2540] border-[#0a2540] hover:bg-[#0f6f73] hover:text-white hover:border-[#0f6f73]"
+            }
+          `}
         >
           {category}
         </Button>
