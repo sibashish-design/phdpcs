@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
@@ -33,13 +33,27 @@ const Header = () => {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
 
+  // ✅ ADD THIS HERE
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  
+
   return (
     <>
-      <header className="bg-gradient-to-br from-[#1FA58A] to-[#145C52] backdrop-blur-xl sticky top-0 z-50 shadow-[0_8px_32px_rgba(0,150,160,0.15)] border-b border-white/20 overflow-hidden">
+      <header className="bg-[#061a1c] sticky top-0 z-50 border-b border-white/10">
         <div className="h-1 bg-[#2e5b8e]"></div>
 
         {/* Background Pattern */}
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width=%2260%22%20height=%2260%22%20viewBox=%220%200%2060%2060%22%20xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg%20fill=%22none%22%20fill-rule=%22evenodd%22%3E%3Cg%20fill=%22%230096a0%22%20fill-opacity=%220.08%22%3E%3Ccircle%20cx=%2210%22%20cy=%2210%22%20r=%222%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-60"></div>
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width=%2260%22%20height=%2260%22%20viewBox=%220%200%2060%2060%22%20xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg%20fill=%22none%22%20fill-rule=%22evenodd%22%3E%3Cg%20fill=%22%230096a0%22%20fill-opacity=%220.08%22%3E%3Ccircle%20cx=%2210%22%20cy=%2210%22%20r=%222%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-10"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
@@ -172,7 +186,7 @@ const Header = () => {
         )}
       >
         {/* Background Pattern for Mobile Menu */}
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width=%2260%22%20height=%2260%22%20viewBox=%220%200%2060%2060%22%20xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg%20fill=%22none%22%20fill-rule=%22evenodd%22%3E%3Cg%20fill=%22%230096a0%22%20fill-opacity=%220.08%22%3E%3Ccircle%20cx=%2210%22%20cy=%2210%22%20r=%222%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-60"></div>
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width=%2260%22%20height=%2260%22%20viewBox=%220%200%2060%2060%22%20xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg%20fill=%22none%22%20fill-rule=%22evenodd%22%3E%3Cg%20fill=%22%230096a0%22%20fill-opacity=%220.08%22%3E%3Ccircle%20cx=%2210%22%20cy=%2210%22%20r=%222%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-10"></div>
 
         {/* Header Section */}
         <div className="flex items-center justify-between px-6 py-8 border-b border-white/20 relative z-10">

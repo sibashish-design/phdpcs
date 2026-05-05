@@ -33,9 +33,16 @@ export default function ContactPage() {
       color: "bg-blue-50 text-blue-600"
     },
     {
+      title: "Vinaypal Singh Rawat",
+      address: "Senior Resident Officer",
+      phone: "+91 95605 00181",
+      icon: MessageSquare,
+      color: "bg-blue-50 text-blue-600"
+    },
+    {
       title: "Event Location",
       address: "Dehradun, Uttarakhand",
-      phone: "Event Date: June 20, 2026",
+      phone: "Event Date: June 24, 2026",
       email: "PHD Chamber of Commerce",
       icon: Globe,
       color: "bg-purple-50 text-purple-600"
@@ -43,7 +50,7 @@ export default function ContactPage() {
   ];
 
   const officeHours = [
-    { day: "Event Date", hours: "June 20, 2026" },
+    { day: "Event Date", hours: "June 24, 2026" },
     { day: "Location", hours: "Dehradun, Uttarakhand" },
     { day: "Organization", hours: "PHD Chamber of Commerce and Industry" },
     { day: "Registration", hours: "Open Now" },

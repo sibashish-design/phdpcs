@@ -1,2 +1,41 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+
+:root {
+  --primary: #0f6f73;       /* Dark Cyan */
+  --primary-light: #14979c;
+  --primary-dark: #0a4f52;
+
+  --bg-main: #061a1c;       /* Deep dark cyan */
+  --bg-card: #0c2a2d;
+  --bg-glass: rgba(255,255,255,0.05);
+
+  --text-main: #e6f7f8;
+  --text-muted: #9bbec0;
+
+  --accent: #f0c040;        /* premium gold */
+}
+
+body {
+   background: var(--bg-main);
+  color: var(--text-main);
+  font-family: 'Inter', sans-serif;
+}
+
+.section {
+  padding: 80px 20px;
+  max-width: 1280px;
+  margin: auto;
+}
+
+.section-title {
+  font-size: 42px;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.section-subtitle {
+  color: var(--muted);
+  max-width: 600px;
+  line-height: 1.6;
+}

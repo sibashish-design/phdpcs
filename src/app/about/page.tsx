@@ -116,19 +116,19 @@ export default function AboutPage() {
           {/* Paragraph Content */}
           <div className="space-y-6 text-base sm:text-lg md:text-xl leading-relaxed max-w-5xl mx-auto px-2">
             <p>
-              India’s healthcare and pharmaceucal sector connues to witness rapid expansion, emerging as a key contributor to economic growth, employment generaon, and innovaon. Uarakhand, with its established pharmaceucal manufacturing clusters, growing healthcare infrastructure, and global posioning in AYUSH and wellness, is uniquely placed to lead this transformaon. The 1st Uarakhand Pharma & Healthcare Conclave & Samman 2026, organized by PHDCCI, successfully created a mul-stakeholder plaorm bringing together government leaders, healthcare instuons, pharma manufacturers, AYUSH praconers, and innovators.
+              India’s healthcare and pharmaceutical sector continues to witness rapid expansion, emerging as a key contributor to economic growth, employment generation, and innovation. Uttarakhand, with its well-established pharmaceutical manufacturing clusters, expanding healthcare infrastructure, and strong positioning in AYUSH and wellness, is uniquely placed to lead this transformation.
             </p>
             <p>
-              PHDCCI, acting as the &quot;Voice of Industry &amp; Trade&quot;
-              reaching out to more than 1,50,000 large, medium and small
-              industries, has forged ahead leveraging its legacy with the
-              industry knowledge across multiple sectors to take Indian Economy
-              to the next level.
+              The PHDCCI Himalayan Pharma Conclave and Samman 2026 (2nd Annual Edition) builds on the success of its previous edition, which brought together key stakeholders across the ecosystem — including government leaders, healthcare institutions, pharmaceutical manufacturers, AYUSH practitioners, and innovators. The platform is designed to foster collaboration, showcase excellence, and accelerate growth across the healthcare and pharma sectors, particularly in the Himalayan region.
             </p>
             <p>
-              At the global level, we have been working with the Embassies and
-              High Commissions in India and overseas to bring in the
-              International Best Practices and Business Opportunities.
+              The Samman programme recognises outstanding contributions across 49 carefully defined categories spanning public health, private healthcare, AYUSH, healthcare manufacturing, and cross-track sustainability and community initiatives, providing a structured and credible framework for industry recognition.
+            </p>
+            <p>
+              PHDCCI, as the Voice of Industry and Trade, represents a wide network of over 150,000 large, medium, and small enterprises. Leveraging its deep industry expertise and multi-sectoral engagement, the organisation continues to play a pivotal role in shaping policy dialogue, fostering innovation, and strengthening India’s economic growth trajectory.
+            </p>
+            <p>
+              At the global level, PHDCCI actively collaborates with Embassies and High Commissions in India and abroad to facilitate international partnerships, bring in global best practices, and unlock new business opportunities for Indian enterprises.
             </p>
           </div>
         </div>

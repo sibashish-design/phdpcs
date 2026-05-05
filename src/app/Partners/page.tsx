@@ -95,22 +95,7 @@ const PartnersPage = () => {
                     </div>
                   </div>
                 </SwiperSlide>
-                {/* Supported by UNGCNI */}
-                <SwiperSlide>
-                  <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 flex flex-col items-center h-[280px]">
-                    <h3 className="text-xl font-bold text-gray-800">
-                      Supported by
-                    </h3>
-                    <div className="h-40 w-full flex items-center justify-center mb-4">
-                      <img
-                        src="/Unglobal.jpg"
-                        alt="UNGCNI"
-                        className="max-h-full max-w-full object-contain"
-                      />
-                    </div>
-                  </div>
-                </SwiperSlide>
-
+                
                 {/* GB Equipment Partner */}
                 <SwiperSlide>
                   <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 flex flex-col items-center h-[280px]">
@@ -143,22 +128,6 @@ const PartnersPage = () => {
                   </div>
                 </SwiperSlide>
 
-                {/* Silver Partner - Multani Pharma */}
-                <SwiperSlide>
-                  <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 flex flex-col items-center h-[280px]">
-                    <h3 className="text-xl font-bold text-gray-800">
-                      Silver Partner
-                    </h3>
-                    <div className="h-40 w-full flex items-center justify-center mb-4">
-                      <img
-                        src="/silver1.png"
-                        alt="Multani Pharma"
-                        className="max-h-full max-w-full object-contain"
-                      />
-                    </div>
-                  </div>
-                </SwiperSlide>
-                {/* Silver Partner - Multani Pharma */}
                 <SwiperSlide>
                   <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 flex flex-col items-center h-[280px]">
                     <h3 className="text-xl font-bold text-gray-800">
@@ -173,21 +142,7 @@ const PartnersPage = () => {
                     </div>
                   </div>
                 </SwiperSlide>
-                {/* DR hiramath global - Multani Pharma */}
-                <SwiperSlide>
-                  <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 flex flex-col items-center h-[280px]">
-                    <h3 className="text-xl font-bold text-gray-800">
-                      Gold Partner
-                    </h3>
-                    <div className="h-40 w-full flex items-center justify-center mb-4">
-                      <img
-                        src="/drhiremath1.png"
-                        alt="Dr. Hiramath Global"
-                        className="max-h-full max-w-full object-contain"
-                      />
-                    </div>
-                  </div>
-                </SwiperSlide>
+                
                 {/* Vivo Partner */}
                 <SwiperSlide>
                   <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 flex flex-col items-center h-[280px]">

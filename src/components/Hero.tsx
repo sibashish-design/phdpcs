@@ -110,7 +110,7 @@ const Hero = () => {
           
           <div className="flex items-center gap-2">
             <CalendarDays className="h-5 w-5 text-white-700 drop-shadow-sm" />
-            <span className="font-semibold">20 June, 2026</span>
+            <span className="font-semibold">24 June, 2026</span>
           </div>
 
           <span className="text-white-700/50 drop-shadow-sm">•</span>

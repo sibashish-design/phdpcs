@@ -9,19 +9,13 @@ export const metadata: Metadata = {
 };
 
 const speakers = [
+  
   {
     id: 1,
-    name: "Mr. Hemant Kochhar",
-    title: " Chair PHDCCI Uttarakhand",
-    bio: " Executive Director at Unique Hotels & Restaurants Pvt Ltd",
-    image: "/speaker02.png",
-  },
-  {
-    id: 2,
-    name: "Mr. R K Jain CEO",
-    title: "East African (India) Overse",
-    bio: "a WHO-GMP certified pharmaceutical company with manufacturing units in Dehradun",
-    image: "/rk.png",
+    name: "Mr. Vineet Kumar Gupta",
+    title: "Co-Chair PHDCCI Uttarakhand Chapter",
+    bio: "Managing Director G B Equipment System LTD",
+    image: "/vineetkumar1.png",
   },
   {
     id: 3,
@@ -29,20 +23,6 @@ const speakers = [
     title: "Co-Chair PHDCCI and Event Chair",
     bio: "Director Axa Parenterals Ltd.",
     image: "/speaker003.png",
-  },
-  {
-    id: 4,
-    name: "Mr. Vineet Kumar Gupta",
-    title: "Co-Chair PHDCCI Uttarakhand Chapter",
-    bio: "Managing Director G B Equipment System LTD",
-    image: "/vineetkumar1.png",
-  },
-  {
-    id: 5,
-    name: "Mr. Amit Khaneja ",
-    title: "Co-Chair PHDCCI Uttrakhand Chapter",
-    bio: "Director - MNT Buildcon Private Limited",
-    image: "/speaker001.png",
   },
   {
     id: 6, // ✅ fixed unique id

@@ -33,12 +33,6 @@ const members = [
   },
   {
     id: 5,
-    name: "Dr. Sanjeev Chopra",
-    title: "Historian Columnist And Ex Director - LBSNA",
-    image: "/Dr.Sanjeev Chopra.png",
-  },
-  {
-    id: 6,
     name: "Dr. Narender Ahooja ",
     title: "Ex Drug Controller Haryana",
     image: "/jurymember6.png",
