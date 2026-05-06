@@ -743,6 +743,7 @@ export const products: Product[] = [
 ];
 
 export const categories = [
+  "All",
   "Track A – Public Health Recognitions",
   "Track B – Private Healthcare Recognitions",
   "Track C – AYUSH Recognitions",
