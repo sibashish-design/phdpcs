@@ -1,22 +1,32 @@
+// src/types/index.ts
+
+import type { PriceBand } from "@/data/products";
+
+// ── Product — matches products.ts exactly ─────────────────────────────────────
 export interface Product {
   id: string;
+  code: string;
+  track: string;
   name: string;
-  description: string;
+  shortDescription: string;
+  fullDescription: string;
   price: number;
+  priceBand: PriceBand;
+  priceNote: string;
+  featured: boolean;
   image: string;
-  category: string;
-  subcategory?: string;
-  featured?: boolean;
-  inStock: boolean;
-  rating: number;
-  reviews: number;
-  viewdetails?: string;
+  universalMandatoryDocs: string[];
+  categoryMandatoryDocs: string[];
+  supportingOptionalDocs: string[];
+  eligibilityNote?: string;
 }
 
+// ── Cart ──────────────────────────────────────────────────────────────────────
 export interface CartItem extends Product {
   quantity: number;
 }
 
+// ── Checkout / Order ──────────────────────────────────────────────────────────
 export interface UserDetails {
   firstName: string;
   lastName: string;

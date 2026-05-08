@@ -2,14 +2,10 @@
 import React from "react";
 
 import FAQSection from "@/components/FAQSection";
-
 import Hero from "@/components/Hero";
-
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-
 import AboutSection from "@/components/AboutSection";
-import { JewelryMembersWithEvent } from "@/components/JewelryMembersSlider";
 
 // Global animation keyframes
 const animationKeyframes = `
@@ -170,10 +166,6 @@ export default function Home() {
                     src="./private-healthcare.png"
                     alt="Private Healthcare"
                     className="w-full h-full object-cover opacity-90 group-hover:scale-110 transition-transform duration-300"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.src = "./private-healthcare.png";
-                    }}
                   />
                 </div>
                 <div className="p-5 flex-grow flex flex-col justify-between">
@@ -202,10 +194,6 @@ export default function Home() {
                     src="./ayushman.png"
                     alt="AYUSH Health Services"
                     className="w-full h-full object-cover opacity-90 group-hover:scale-110 transition-transform duration-300"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.src = "./ayushman.png";
-                    }}
                   />
                 </div>
                 <div className="p-5 flex-grow flex flex-col justify-between">
@@ -234,10 +222,6 @@ export default function Home() {
                     src="./HealthcareManufacturers.png"
                     alt="Healthcare Manufacturers"
                     className="w-full h-full object-cover opacity-90 group-hover:scale-110 transition-transform duration-300"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.src = "./HealthcareManufacturers.png";
-                    }}
                   />
                 </div>
                 <div className="p-5 flex-grow flex flex-col justify-between">
@@ -266,10 +250,6 @@ export default function Home() {
                     src="./jury.png"
                     alt="Jury Choice Recognitions"
                     className="w-full h-full object-cover opacity-90 group-hover:scale-110 transition-transform duration-300"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.src = "./jury.png";
-                    }}
                   />
                 </div>
                 <div className="p-5 flex-grow flex flex-col justify-between">
@@ -294,7 +274,6 @@ export default function Home() {
       </section>
 
       <AboutSection />
-      <JewelryMembersWithEvent />
       <FAQSection />
     </div>
   );

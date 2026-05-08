@@ -1,12 +1,11 @@
 "use client";
 /* eslint-disable @next/next/no-img-element */
 import React, { useState } from "react";
-
 import { ShoppingCart, Eye } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Product } from "@/types";
+import { Product } from "@/data/products";
 import { useCart } from "@/contexts/CartContext";
 import { toast } from "sonner";
 import ProductDetailsModal from "./ProductDetailsModal";
@@ -24,92 +23,98 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
     toast.success(`${product.name} added to cart!`);
   };
 
-  const openModal = () => setIsModalOpen(true);
-  const closeModal = () => setIsModalOpen(false);
-
+  // Price display helper
+  const priceDisplay =
+    product.price === 0 ? "No Fee" : `₹${product.price.toLocaleString("en-IN")}`;
 
   return (
     <>
-      <Card className="group hover:shadow-lg transition-all duration-300 hover:scale-105 border border-[#015D67]/10 bg-white p-2 max-w-xs mx-auto">
-        <CardContent className="p-0">
-          <div className="relative overflow-hidden rounded-t-lg">
-            <img
-              src={product.image}
-              alt={product.name}
-              className="w-full h-36 object-cover group-hover:scale-110 transition-transform duration-300"
-            />
-            {product.featured && (
-              <Badge className="absolute top-2 left-2 bg-[#015D67] text-white">Featured</Badge>
-            )}
-            {!product.inStock && (
-              <Badge variant="secondary" className="absolute top-2 right-2 bg-red-500 text-white">
-                Out of Stock
-              </Badge>
-            )}
-            <div 
-              className="absolute inset-0 bg-black/0 hover:bg-black/30 transition-all duration-300 flex items-center justify-center opacity-0 hover:opacity-100 cursor-pointer"
-              onClick={openModal}
-            >
-              <Button variant="outline" size="sm" className="bg-white/80 hover:bg-white">
-                <Eye className="h-4 w-4 mr-1" /> View Details
-              </Button>
+      <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-[#015D67]/10 bg-white overflow-hidden flex flex-col h-full">
+        {/* Image */}
+        <div className="relative overflow-hidden h-40 shrink-0">
+          <img
+            src={product.image}
+            alt={product.name}
+            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+          />
+          {product.featured && (
+            <Badge className="absolute top-2 left-2 bg-[#015D67] text-white text-[10px] px-2 py-0.5">
+              Featured
+            </Badge>
+          )}
+          {/* Hover overlay — eye icon only */}
+          <div
+            className="absolute inset-0 bg-black/0 group-hover:bg-black/25 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100 cursor-pointer"
+            onClick={() => setIsModalOpen(true)}
+          >
+            <div className="bg-white/90 rounded-full p-2 shadow-lg">
+              <Eye className="h-5 w-5 text-[#015D67]" />
             </div>
           </div>
+        </div>
 
-          <div className="p-3">
-            <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
-              <Badge
-                variant="outline"
-                className="text-xs whitespace-normal break-words bg-[#015D67]/10 text-[#015D67] border-none"
-              >
-                {product.category}
-              </Badge>
-            </div>
+        <CardContent className="p-3 flex flex-col flex-1 gap-1">
+          {/* Track badge */}
+          <Badge
+            variant="outline"
+            className="text-[10px] w-fit bg-[#015D67]/8 text-[#015D67] border-[#015D67]/20 line-clamp-1 leading-tight py-0.5"
+          >
+            {product.code} · {product.track.replace(/^Track [A-Z] – /, "").replace("Cross-Track – ", "").replace(" Recognitions", "")}
+          </Badge>
 
-            <h3 
-              className="font-semibold text-base mb-1 line-clamp-1 cursor-pointer hover:text-[#015D67] transition-colors" 
-              style={{ color: '#2e5b8e' }}
-              onClick={openModal}
+          {/* Name */}
+          <h3
+            className="font-semibold text-sm leading-snug line-clamp-2 cursor-pointer hover:text-[#015D67] transition-colors text-[#1a3a5c]"
+            onClick={() => setIsModalOpen(true)}
+          >
+            {product.name}
+          </h3>
+
+          {/* Short description */}
+          <p className="text-[11px] text-slate-500 line-clamp-2 leading-snug flex-1">
+            {product.shortDescription}
+          </p>
+
+          {/* Price */}
+          <div className="mt-1">
+            <span
+              className={`text-sm font-bold ${
+                product.price === 0 ? "text-emerald-600" : "text-[#015D67]"
+              }`}
             >
-              {product.name}
-            </h3>
-
-            <p className="text-xs mb-2 line-clamp-2" style={{ color: '#336699' }}>
-              {product.description}
-            </p>
-
-            {/* <div className="flex items-center justify-between">
-              <span className="text-xl font-bold" style={{ color: '#2e5b8e' }}>
-                ₹{product.price}
-              </span>
-            </div> */}
+              {priceDisplay}
+            </span>
+            {product.price > 0 && (
+              <span className="text-[10px] text-slate-400 ml-1">+ GST</span>
+            )}
           </div>
-          <CardFooter className="p-2 pt-0 pb-1 flex gap-2">
-            <Button
-              onClick={handleAddToCart}
-              disabled={!product.inStock}
-              className="flex-1 bg-[#015D67] text-white hover:bg-[#60afaa]/90 h-8 text-sm"
-              size="sm"
-            >
-              <ShoppingCart className="h-4 w-4 mr-1" />
-              Add to Cart
-            </Button>
-            <Button
-              onClick={openModal}
-              className="bg-gray-100 text-gray-700 hover:bg-gray-200 h-8 text-sm"
-              size="sm"
-              variant="outline"
-            >
-              <Eye className="h-4 w-4" />
-            </Button>
-          </CardFooter>
         </CardContent>
+
+        <CardFooter className="p-3 pt-0 flex gap-2">
+          <Button
+            onClick={handleAddToCart}
+            className="flex-1 bg-[#015D67] text-white hover:bg-[#015D67]/85 h-8 text-xs font-medium"
+            size="sm"
+          >
+            <ShoppingCart className="h-3.5 w-3.5 mr-1" />
+            Add to Cart
+          </Button>
+          <Button
+            onClick={() => setIsModalOpen(true)}
+            className="h-8 px-3 bg-slate-100 text-slate-600 hover:bg-slate-200 border-0"
+            size="sm"
+            variant="outline"
+            title="View details"
+          >
+            <Eye className="h-3.5 w-3.5" />
+          </Button>
+        </CardFooter>
       </Card>
-      
-      <ProductDetailsModal 
-        product={product} 
-        isOpen={isModalOpen} 
-        onClose={closeModal} 
+
+      <ProductDetailsModal
+        product={product}
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
       />
     </>
   );
