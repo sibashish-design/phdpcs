@@ -7,16 +7,25 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
 const TRACK = "Track C – AYUSH Recognitions";
+const PAGE_SIZE = 12;
 
 export default function AyushHealthPage() {
   const all = getProductsByTrack(TRACK);
   const [search, setSearch] = useState("");
+  const [page, setPage] = useState(1);
 
   const filtered = all.filter(
     (p) =>
       p.name.toLowerCase().includes(search.toLowerCase()) ||
       p.shortDescription.toLowerCase().includes(search.toLowerCase())
   );
+
+  const paginated = filtered.slice(0, page * PAGE_SIZE);
+
+  const handleSearch = (val: string) => {
+    setSearch(val);
+    setPage(1);
+  };
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -33,17 +42,31 @@ export default function AyushHealthPage() {
           </p>
         </div>
         <div className="bg-white rounded-lg shadow-sm p-6 mb-8">
-          <SearchBar searchTerm={search} onSearchChange={setSearch} />
+          <SearchBar searchTerm={search} onSearchChange={handleSearch} />
         </div>
         <p className="text-gray-600 mb-6">
-          Showing {filtered.length} of {all.length} categories
+          Showing {paginated.length} of {filtered.length} categories
         </p>
-        {filtered.length > 0 ? (
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-            {filtered.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-          </div>
+
+        {paginated.length > 0 ? (
+          <>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+              {paginated.map((product) => (
+                <ProductCard key={product.id} product={product} />
+              ))}
+            </div>
+
+            {paginated.length < filtered.length && (
+              <div className="text-center mt-8">
+                <button
+                  onClick={() => setPage((p) => p + 1)}
+                  className="px-6 py-2 bg-[#015D67] text-white rounded-lg hover:bg-[#015D67]/85 transition-colors font-medium"
+                >
+                  Load More ({filtered.length - paginated.length} remaining)
+                </button>
+              </div>
+            )}
+          </>
         ) : (
           <div className="text-center py-12">
             <p className="text-gray-500 text-lg">No categories found matching your search.</p>

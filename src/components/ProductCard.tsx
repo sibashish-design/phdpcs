@@ -42,6 +42,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           <img
             src={product.image}
             alt={product.name}
+            loading="lazy"
             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 min-h-[100px]"
           />
           {product.featured && (
@@ -109,11 +110,13 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         </div>
       </div>
 
-      <ProductDetailsModal
-        product={product}
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-      />
+  {isModalOpen && (
+  <ProductDetailsModal
+    product={product}
+    isOpen={isModalOpen}
+    onClose={() => setIsModalOpen(false)}
+  />
+)}
     </>
   );
 };
