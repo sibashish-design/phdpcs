@@ -177,7 +177,7 @@ const products: Product[] = [
     priceBand: "Small Enterprise / MSME / Individual",
     priceNote: "No registration fee — government / public sector category",
     featured: false,
-    image: "https://images.pexels.com/photos/5721665/pexels-photo-5721665.jpeg",
+    image: "https://images.pexels.com/photos/36885032/pexels-photo-36885032.jpeg",
     universalMandatoryDocs: UNIVERSAL_MANDATORY_DOCS,
     categoryMandatoryDocs: [
       "NHM dashboard performance extract for the facility (last 12 months)",
@@ -909,7 +909,7 @@ const products: Product[] = [
     priceBand: "Medium Enterprise",
     priceNote: "Registration fee: ₹5,000 (GST extra as applicable)",
     featured: false,
-    image: "https://images.pexels.com/photos/1552252/pexels-photo-1552252.jpeg",
+    image: "https://images.pexels.com/photos/8828607/pexels-photo-8828607.jpeg",
     universalMandatoryDocs: UNIVERSAL_MANDATORY_DOCS,
     categoryMandatoryDocs: [
       "Manufacturing Licence — CDSCO or State Drug Licensing Authority",
@@ -1554,7 +1554,7 @@ const products: Product[] = [
     priceBand: "Complimentary",
     priceNote: "Complimentary — no fee. Awarded from pool of nominees with 2+ Track B nominations.",
     featured: true,
-    image: "https://images.pexels.com/photos/40568/medical-appointment-doctor-healthcare-40568.jpeg",
+    image: "https://images.pexels.com/photos/4769127/pexels-photo-4769127.jpeg",
     universalMandatoryDocs: [],
     categoryMandatoryDocs: [
       "Minimum 2 competitive nominations filed under Track B — verified automatically from the nomination portal",
