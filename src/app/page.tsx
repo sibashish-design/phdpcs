@@ -165,7 +165,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <JewelryMembersSlider />   {/* ← add this */}
+    <JewelryMembersSlider />   {/* ← add this */}
       <AboutSection />
       <FAQSection />
     </div>
