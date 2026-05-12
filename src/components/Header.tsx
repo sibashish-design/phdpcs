@@ -32,40 +32,36 @@ const Header = () => {
   const { itemCount } = useCart();
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
-
-  // ✅ ADD THIS HERE
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  
-
   return (
     <>
-      <header className="bg-[#061a1c] sticky top-0 z-50 border-b border-white/10">
+      <header
+        className={clsx(
+          "sticky top-0 z-50 border-b border-white/10 transition-all duration-300",
+          scrolled
+            ? "bg-[#061a1c]/95 backdrop-blur-md shadow-lg shadow-black/20"
+            : "bg-[#061a1c]"
+        )}
+      >
         <div className="h-1 bg-[#2e5b8e]"></div>
 
         {/* Background Pattern */}
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width=%2260%22%20height=%2260%22%20viewBox=%220%200%2060%2060%22%20xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg%20fill=%22none%22%20fill-rule=%22evenodd%22%3E%3Cg%20fill=%22%230096a0%22%20fill-opacity=%220.08%22%3E%3Ccircle%20cx=%2210%22%20cy=%2210%22%20r=%222%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-10"></div>
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width=%2260%22%20height=%2260%22%20viewBox=%220%200%2060%2060%22%20xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg%20fill=%22none%22%20fill-rule=%22evenodd%22%3E%3Cg%20fill=%22%230096a0%22%20fill-opacity=%220.08%22%3E%3Ccircle%20cx=%2210%22%20cy=%2210%22%20r=%222%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-10 pointer-events-none"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
-
             <Link href="/" className="flex items-center space-x-1">
-              <Image
-                src="/logo.png"
-                alt="Pharma Logo"
-                width={100}
-                height={100}
-              />
+              <Image src="/logo.png" alt="Pharma Logo" width={100} height={100} />
             </Link>
 
             {/* Desktop Nav */}
@@ -81,17 +77,15 @@ const Header = () => {
                       "hover:text-white hover:bg-white/20 hover:backdrop-blur-sm",
                       "transform hover:-translate-y-1 hover:scale-105",
                       "border border-transparent hover:border-white/30",
-                      "drop-shadow-sm"
+                      "drop-shadow-sm",
+                      isActive && "bg-white/15 border-white/20"
                     )}
                   >
                     {link.name}
                     <span
                       className={clsx(
-                        "transform origin-left transition-transform duration-500",
-                        "shadow-sm shadow-white/50",
-                        isActive
-                          ? "scale-x-100"
-                          : "scale-x-0 group-hover:scale-x-100"
+                        "absolute bottom-0 left-4 right-4 h-0.5 bg-[#60afaa] rounded-full transform origin-left transition-transform duration-300",
+                        isActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
                       )}
                     />
                   </Link>
@@ -129,8 +123,7 @@ const Header = () => {
                   "transform transition-all duration-300",
                   "rounded-xl p-3",
                   "backdrop-blur-sm",
-                  mobileOpen &&
-                    "bg-white/30 shadow-sm shadow-white/10 translate-x-[1px] translate-y-[1px]"
+                  mobileOpen && "bg-white/30 shadow-sm shadow-white/10"
                 )}
                 onClick={() => setMobileOpen((prev) => !prev)}
               >
@@ -141,41 +134,8 @@ const Header = () => {
           </div>
         </div>
       </header>
-      <div className="hidden">
-        <div className="flex gap-8 animate-marquee whitespace-nowrap text-sm md:text-base font-medium">
-          <span className="font-semibold">
-            📢 For Sponsorship, Speaking Slot and Space booking contact:
-            ritesh.singh@phdcci.in / 8527900622. Registration for Excellence
-            Award nomination will close by 20th June 2026 |
-          </span>
-          <span className="font-semibold">
-            📢 For Sponsorship, Speaking Slot and Space booking contact:
-            ritesh.singh@phdcci.in / 8527900622. Registration for Excellence
-            Award nomination will close by 20th June 2026 |
-          </span>
-          <span className="font-semibold">
-            📢 For Sponsorship, Speaking Slot and Space booking contact:
-            ritesh.singh@phdcci.in / 8527900622. Registration for Excellence
-            Award nomination will close by 20th June 2026
-          </span>
-        </div>
 
-        <style jsx>{`
-          @keyframes marquee {
-            0% {
-              transform: translateX(0%);
-            }
-            100% {
-              transform: translateX(-100%);
-            }
-          }
-
-          .animate-marquee {
-            display: flex;
-            animation: marquee 40s linear infinite;
-          }
-        `}</style>
-      </div>
+      
 
       {/* Full Screen Mobile Menu */}
       <div
@@ -185,35 +145,20 @@ const Header = () => {
           mobileOpen ? "translate-x-0" : "translate-x-full"
         )}
       >
-        {/* Background Pattern for Mobile Menu */}
         <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width=%2260%22%20height=%2260%22%20viewBox=%220%200%2060%2060%22%20xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg%20fill=%22none%22%20fill-rule=%22evenodd%22%3E%3Cg%20fill=%22%230096a0%22%20fill-opacity=%220.08%22%3E%3Ccircle%20cx=%2210%22%20cy=%2210%22%20r=%222%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-10"></div>
 
-        {/* Header Section */}
         <div className="flex items-center justify-between px-6 py-8 border-b border-white/20 relative z-10">
-          <h2 className="text-2xl font-bold text-white drop-shadow-lg">
-            Menu Items
-          </h2>
+          <h2 className="text-2xl font-bold text-white drop-shadow-lg">Menu Items</h2>
           <Button
             size="icon"
             variant="ghost"
             onClick={() => setMobileOpen(false)}
-            className={clsx(
-              "relative overflow-hidden",
-              "bg-white/20 hover:bg-white/30",
-              "shadow-lg shadow-white/20",
-              "active:shadow-sm active:shadow-white/10",
-              "active:translate-x-[1px] active:translate-y-[1px]",
-              "transform transition-all duration-300",
-              "rounded-full p-3",
-              "backdrop-blur-sm"
-            )}
+            className="relative overflow-hidden bg-white/20 hover:bg-white/30 shadow-lg shadow-white/20 rounded-full p-3 backdrop-blur-sm transition-all duration-300"
           >
             <X className="w-6 h-6 text-white drop-shadow-sm" />
-            <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent pointer-events-none" />
           </Button>
         </div>
 
-        {/* Navigation Items */}
         <div className="px-6 py-8 relative z-10">
           <nav className="flex flex-col gap-6">
             {navLinks.map((link) => {
@@ -230,10 +175,7 @@ const Header = () => {
                     "hover:bg-white/20 hover:backdrop-blur-sm hover:shadow-xl hover:shadow-white/20",
                     "transform hover:scale-105 hover:-translate-y-1",
                     "border border-transparent hover:border-white/30",
-                    "shadow-sm hover:shadow-lg hover:shadow-white/20",
-                    "drop-shadow-lg",
-                    isActive &&
-                      "bg-white/20 backdrop-blur-sm font-extrabold shadow-xl shadow-white/20 border-white/30 text-white"
+                    isActive && "bg-white/20 backdrop-blur-sm font-extrabold shadow-xl border-white/30"
                   )}
                 >
                   <IconComponent className="w-6 h-6" />

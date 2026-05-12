@@ -1,237 +1,207 @@
 "use client";
-import React, { useState } from "react";
-import { ChevronLeft, ChevronRight, User } from "lucide-react";
+/* eslint-disable @next/next/no-img-element */
+import React, { useState, useEffect, useCallback } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
-export interface TeamMember {
-  fullName: string;
-  designation: string;
-  mobile: string;
-  photo?: string; // base64 or URL
-}
+const juryMembers = [
+  {
+    name: "Mr. SOMNATH",
+    designation: "Deputy Director",
+    organisation: "UN Global Compact Network India",
+    image: "/jurymember1.png",
+  },
+  {
+    name: "Dr. (Prof.) Rajendra Dobhal",
+    designation: "Vice-Chancellor",
+    organisation: "Swami Rama Himalayan University",
+    image: "/jurymember3.png",
+  },
+  {
+    name: "UNDP",
+    designation: "United Nations Development Programme",
+    organisation: "United Nations",
+    image: "/jurymember4.png",
+  },
+  {
+    name: "Shri G N Singh",
+    designation: "Advisor to Hon'ble CM, UP",
+    organisation: "Former-DCGI",
+    image: "/jurymember5.png",
+  },
+  {
+    name: "Dr. Narender Ahooja",
+    designation: "Ex Drug Controller",
+    organisation: "Haryana",
+    image: "/jurymember6.png",
+  },
+];
 
-interface KeyMembersSliderProps {
-  members: TeamMember[];
-  /** Called when user adds/edits members */
-  onChange?: (members: TeamMember[]) => void;
-  /** Read-only display mode (no edit controls) */
-  readOnly?: boolean;
-}
-
-const EMPTY_MEMBER: TeamMember = {
-  fullName: "",
-  designation: "",
-  mobile: "",
-  photo: undefined,
-};
-
-const KeyMembersSlider: React.FC<KeyMembersSliderProps> = ({
-  members,
-  onChange,
-  readOnly = false,
-}) => {
+const JewelryMembersSlider: React.FC = () => {
   const [current, setCurrent] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
+  const total = juryMembers.length;
 
-  const safeMembers = members.length > 0 ? members : [{ ...EMPTY_MEMBER }];
-  const total = safeMembers.length;
+  const goTo = useCallback(
+    (index: number) => {
+      if (isAnimating) return;
+      setIsAnimating(true);
+      setCurrent((index + total) % total);
+      setTimeout(() => setIsAnimating(false), 400);
+    },
+    [isAnimating, total]
+  );
 
-  const prev = () => setCurrent((c) => (c - 1 + total) % total);
-  const next = () => setCurrent((c) => (c + 1) % total);
+  const prev = () => goTo(current - 1);
+  const next = useCallback(() => goTo(current + 1), [current, goTo]);
 
-  const handleField = (
-    field: keyof TeamMember,
-    value: string
-  ) => {
-    if (!onChange) return;
-    const updated = safeMembers.map((m, i) =>
-      i === current ? { ...m, [field]: value } : m
-    );
-    onChange(updated);
+  // Auto-advance every 4 seconds
+  useEffect(() => {
+    const timer = setInterval(next, 4000);
+    return () => clearInterval(timer);
+  }, [next]);
+
+  // Visible cards: show 1 on mobile, 3 on desktop
+  const getVisible = () => {
+    const indices = [];
+    for (let i = -1; i <= 1; i++) {
+      indices.push((current + i + total) % total);
+    }
+    return indices;
   };
-
-  const handlePhotoUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (!onChange) return;
-    const file = e.target.files?.[0];
-    if (!file) return;
-    const reader = new FileReader();
-    reader.onload = () => {
-      const updated = safeMembers.map((m, i) =>
-        i === current ? { ...m, photo: reader.result as string } : m
-      );
-      onChange(updated);
-    };
-    reader.readAsDataURL(file);
-  };
-
-  const addMember = () => {
-    if (!onChange || safeMembers.length >= 5) return;
-    const updated = [...safeMembers, { ...EMPTY_MEMBER }];
-    onChange(updated);
-    setCurrent(updated.length - 1);
-  };
-
-  const removeMember = () => {
-    if (!onChange || safeMembers.length <= 1) return;
-    const updated = safeMembers.filter((_, i) => i !== current);
-    onChange(updated);
-    setCurrent(Math.min(current, updated.length - 1));
-  };
-
-  const member = safeMembers[current];
 
   return (
-    <div className="bg-white border border-[#015D67]/15 rounded-2xl overflow-hidden shadow-sm">
-      {/* Header */}
-      <div className="bg-[#015D67] px-4 py-3 flex items-center justify-between">
-        <div>
-          <p className="text-white font-semibold text-sm">Key Team Members</p>
-          <p className="text-white/60 text-[11px]">
-            Who will be called on stage at Gala Night (min 1, max 5)
+    <section className="py-14 sm:py-20 bg-gradient-to-b from-[#f8fffe] to-[#edf7f6] overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        {/* Section header */}
+        <div className="text-center mb-10 sm:mb-14">
+          <p className="text-xs sm:text-sm font-semibold tracking-[0.2em] text-[#60afaa] uppercase mb-2">
+            Distinguished Panel
+          </p>
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-[#015D67] mb-3">
+            Meet Our Jury Members
+          </h2>
+          <div className="w-16 h-1 bg-gradient-to-r from-[#1FA58A] to-[#2e5b8e] rounded-full mx-auto" />
+          <p className="text-sm sm:text-base text-gray-500 mt-4 max-w-xl mx-auto">
+            A team of experts shaping elegance and excellence in healthcare and pharma.
           </p>
         </div>
-        <div className="flex items-center gap-2 text-white text-sm font-medium">
+
+        {/* Slider */}
+        <div className="relative">
+
+          {/* Desktop: show 3 cards side by side */}
+          <div className="hidden sm:flex items-center justify-center gap-6">
+            {getVisible().map((idx, pos) => {
+              const member = juryMembers[idx];
+              const isCenter = pos === 1;
+              return (
+                <div
+                  key={idx}
+                  onClick={() => !isCenter && goTo(idx)}
+                  className={`
+                    relative flex flex-col items-center rounded-2xl overflow-hidden transition-all duration-500 cursor-pointer
+                    ${isCenter
+                      ? "w-72 shadow-2xl scale-100 z-10 bg-white"
+                      : "w-56 shadow-md scale-90 opacity-60 hover:opacity-80 bg-white/80"
+                    }
+                  `}
+                >
+                  {/* Image */}
+                  <div className={`w-full overflow-hidden ${isCenter ? "h-64" : "h-48"} transition-all duration-500`}>
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="w-full h-full object-cover object-top"
+                    />
+                  </div>
+
+                  {/* Gradient overlay on image bottom */}
+                  <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#015D67]/90 to-transparent" />
+
+                  {/* Text */}
+                  <div className="absolute bottom-0 inset-x-0 p-4 text-white">
+                    <h3 className={`font-bold leading-tight mb-0.5 ${isCenter ? "text-base" : "text-sm"}`}>
+                      {member.name}
+                    </h3>
+                    <p className={`text-white/80 leading-tight ${isCenter ? "text-xs" : "text-[10px]"}`}>
+                      {member.designation}
+                    </p>
+                    <p className={`text-white/60 leading-tight ${isCenter ? "text-[11px]" : "text-[9px]"}`}>
+                      {member.organisation}
+                    </p>
+                  </div>
+
+                  {/* Active border */}
+                  {isCenter && (
+                    <div className="absolute inset-0 rounded-2xl ring-2 ring-[#1FA58A] pointer-events-none" />
+                  )}
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Mobile: single card */}
+          <div className="sm:hidden flex justify-center">
+            <div className="relative w-72 rounded-2xl overflow-hidden shadow-2xl bg-white">
+              <div className="h-72 w-full overflow-hidden">
+                <img
+                  src={juryMembers[current].image}
+                  alt={juryMembers[current].name}
+                  className="w-full h-full object-cover object-top"
+                />
+              </div>
+              <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-[#015D67]/90 to-transparent" />
+              <div className="absolute bottom-0 inset-x-0 p-4 text-white">
+                <h3 className="font-bold text-base leading-tight mb-0.5">
+                  {juryMembers[current].name}
+                </h3>
+                <p className="text-white/80 text-xs leading-tight">
+                  {juryMembers[current].designation}
+                </p>
+                <p className="text-white/60 text-[11px] leading-tight">
+                  {juryMembers[current].organisation}
+                </p>
+              </div>
+              <div className="absolute inset-0 rounded-2xl ring-2 ring-[#1FA58A] pointer-events-none" />
+            </div>
+          </div>
+
+          {/* Prev / Next buttons */}
           <button
             onClick={prev}
-            disabled={total <= 1}
-            className="p-1 rounded-full hover:bg-white/20 disabled:opacity-30 transition-colors"
+            className="absolute left-0 sm:-left-4 top-1/2 -translate-y-1/2 z-20 bg-white shadow-lg rounded-full p-2.5 hover:bg-[#015D67] hover:text-white text-[#015D67] transition-all duration-300 border border-[#015D67]/10"
+            aria-label="Previous"
           >
-            <ChevronLeft className="h-4 w-4" />
+            <ChevronLeft className="h-5 w-5" />
           </button>
-          <span className="min-w-[3ch] text-center text-xs">
-            {current + 1}/{total}
-          </span>
           <button
             onClick={next}
-            disabled={total <= 1}
-            className="p-1 rounded-full hover:bg-white/20 disabled:opacity-30 transition-colors"
+            className="absolute right-0 sm:-right-4 top-1/2 -translate-y-1/2 z-20 bg-white shadow-lg rounded-full p-2.5 hover:bg-[#015D67] hover:text-white text-[#015D67] transition-all duration-300 border border-[#015D67]/10"
+            aria-label="Next"
           >
-            <ChevronRight className="h-4 w-4" />
+            <ChevronRight className="h-5 w-5" />
           </button>
         </div>
-      </div>
 
-      {/* Slide dots */}
-      {total > 1 && (
-        <div className="flex gap-1 justify-center py-2 bg-[#015D67]/5 border-b border-[#015D67]/10">
-          {safeMembers.map((_, i) => (
+        {/* Dot indicators */}
+        <div className="flex justify-center gap-2 mt-8">
+          {juryMembers.map((_, i) => (
             <button
               key={i}
-              onClick={() => setCurrent(i)}
-              className={`rounded-full transition-all ${
+              onClick={() => goTo(i)}
+              className={`rounded-full transition-all duration-300 ${
                 i === current
-                  ? "bg-[#015D67] w-5 h-2"
-                  : "bg-[#015D67]/30 w-2 h-2 hover:bg-[#015D67]/50"
+                  ? "bg-[#015D67] w-6 h-2.5"
+                  : "bg-[#015D67]/25 w-2.5 h-2.5 hover:bg-[#015D67]/50"
               }`}
+              aria-label={`Go to member ${i + 1}`}
             />
           ))}
         </div>
-      )}
-
-      {/* Member card */}
-      <div className="p-5 flex gap-4 items-start">
-        {/* Photo */}
-        <div className="shrink-0">
-          <div className="w-16 h-16 rounded-xl overflow-hidden border-2 border-[#015D67]/20 bg-gray-100 flex items-center justify-center">
-            {member.photo ? (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img
-                src={member.photo}
-                alt={member.fullName || "Member photo"}
-                className="w-full h-full object-cover"
-              />
-            ) : (
-              <User className="h-7 w-7 text-gray-400" />
-            )}
-          </div>
-          {!readOnly && (
-            <label className="mt-1.5 flex justify-center cursor-pointer">
-              <span className="text-[10px] text-[#015D67] underline underline-offset-2 hover:no-underline">
-                {member.photo ? "Change" : "Upload photo"}
-              </span>
-              <input
-                type="file"
-                accept="image/*"
-                className="sr-only"
-                onChange={handlePhotoUpload}
-              />
-            </label>
-          )}
-        </div>
-
-        {/* Fields */}
-        <div className="flex-1 grid grid-cols-1 gap-2.5">
-          <Field
-            label="Full Name"
-            value={member.fullName}
-            placeholder="e.g. Dr. Ramesh Kumar"
-            onChange={(v) => handleField("fullName", v)}
-            readOnly={readOnly}
-          />
-          <Field
-            label="Designation"
-            value={member.designation}
-            placeholder="e.g. Managing Director"
-            onChange={(v) => handleField("designation", v)}
-            readOnly={readOnly}
-          />
-          <Field
-            label="Mobile Number"
-            value={member.mobile}
-            placeholder="10-digit mobile"
-            onChange={(v) => handleField("mobile", v)}
-            readOnly={readOnly}
-            type="tel"
-          />
-        </div>
       </div>
-
-      {/* Add / Remove controls */}
-      {!readOnly && (
-        <div className="flex gap-2 px-5 pb-4">
-          <button
-            onClick={addMember}
-            disabled={safeMembers.length >= 5}
-            className="flex-1 py-1.5 rounded-lg border border-[#015D67]/40 text-[#015D67] text-xs font-semibold hover:bg-[#015D67]/5 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
-          >
-            + Add Member
-          </button>
-          <button
-            onClick={removeMember}
-            disabled={safeMembers.length <= 1}
-            className="px-4 py-1.5 rounded-lg border border-red-200 text-red-500 text-xs font-semibold hover:bg-red-50 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
-          >
-            Remove
-          </button>
-        </div>
-      )}
-    </div>
+    </section>
   );
 };
 
-// ── Tiny field component ──────────────────────────────────────────────────────
-const Field: React.FC<{
-  label: string;
-  value: string;
-  placeholder: string;
-  onChange: (v: string) => void;
-  readOnly: boolean;
-  type?: string;
-}> = ({ label, value, placeholder, onChange, readOnly, type = "text" }) => (
-  <div>
-    <label className="block text-[10px] font-semibold text-gray-500 mb-0.5 uppercase tracking-wide">
-      {label}
-    </label>
-    {readOnly ? (
-      <p className="text-sm text-gray-800">{value || <span className="text-gray-400 italic">Not provided</span>}</p>
-    ) : (
-      <input
-        type={type}
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
-        placeholder={placeholder}
-        className="w-full border border-gray-200 rounded-lg px-3 py-1.5 text-sm text-gray-800 placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-[#015D67]/30 focus:border-[#015D67]/50 transition-all"
-      />
-    )}
-  </div>
-);
-
-export default KeyMembersSlider;
+export default JewelryMembersSlider;
