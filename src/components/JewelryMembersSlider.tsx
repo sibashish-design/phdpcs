@@ -5,7 +5,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const juryMembers = [
   {
-    name: "Mr. SOMNATH",
+    name: "Mr. Somnath",
     designation: "Deputy Director",
     organisation: "UN Global Compact Network India",
     image: "/jurymember1.png",
@@ -39,6 +39,7 @@ const juryMembers = [
 const JewelryMembersSlider: React.FC = () => {
   const [current, setCurrent] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
   const total = juryMembers.length;
 
   const goTo = useCallback(
@@ -46,7 +47,7 @@ const JewelryMembersSlider: React.FC = () => {
       if (isAnimating) return;
       setIsAnimating(true);
       setCurrent((index + total) % total);
-      setTimeout(() => setIsAnimating(false), 400);
+      setTimeout(() => setIsAnimating(false), 500);
     },
     [isAnimating, total]
   );
@@ -54,152 +55,231 @@ const JewelryMembersSlider: React.FC = () => {
   const prev = () => goTo(current - 1);
   const next = useCallback(() => goTo(current + 1), [current, goTo]);
 
-  // Auto-advance every 4 seconds
   useEffect(() => {
-    const timer = setInterval(next, 4000);
+    if (isPaused) return;
+    const timer = setInterval(next, 4500);
     return () => clearInterval(timer);
-  }, [next]);
+  }, [next, isPaused]);
 
-  // Visible cards: show 1 on mobile, 3 on desktop
-  const getVisible = () => {
-    const indices = [];
-    for (let i = -1; i <= 1; i++) {
-      indices.push((current + i + total) % total);
-    }
-    return indices;
-  };
+  // Returns indices for left-side, center, and right-side cards
+  const getVisible = () => [
+    (current - 1 + total) % total,
+    current,
+    (current + 1) % total,
+  ];
+
+  const visible = getVisible();
 
   return (
-    <section className="py-14 sm:py-20 bg-gradient-to-b from-[#f8fffe] to-[#edf7f6] overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section
+      className="relative py-20 overflow-hidden"
+      style={{ background: "linear-gradient(160deg, #f0fafa 0%, #e8f4f3 50%, #f5f9ff 100%)" }}
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+    >
+      {/* Subtle background pattern */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: `radial-gradient(circle at 20% 20%, rgba(31,165,138,0.06) 0%, transparent 50%),
+                            radial-gradient(circle at 80% 80%, rgba(46,91,142,0.06) 0%, transparent 50%)`,
+        }}
+      />
 
-        {/* Section header */}
-        <div className="text-center mb-10 sm:mb-14">
-          <p className="text-xs sm:text-sm font-semibold tracking-[0.2em] text-[#60afaa] uppercase mb-2">
+      {/* Decorative top border */}
+      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#1FA58A] to-transparent" />
+
+      <div className="relative max-w-6xl mx-auto px-6 lg:px-8">
+
+        {/* Header */}
+        <div className="text-center mb-14">
+          <span
+            className="inline-block text-xs font-bold tracking-[0.3em] uppercase mb-4 px-4 py-1.5 rounded-full"
+            style={{
+              background: "linear-gradient(135deg, rgba(31,165,138,0.12), rgba(46,91,142,0.12))",
+              color: "#1FA58A",
+              border: "1px solid rgba(31,165,138,0.2)",
+            }}
+          >
             Distinguished Panel
-          </p>
-          <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-[#015D67] mb-3">
+          </span>
+          <h2
+            className="text-4xl md:text-5xl font-extrabold mb-4"
+            style={{ color: "#015D67", letterSpacing: "-0.02em" }}
+          >
             Meet Our Jury Members
           </h2>
-          <div className="w-16 h-1 bg-gradient-to-r from-[#1FA58A] to-[#2e5b8e] rounded-full mx-auto" />
-          <p className="text-sm sm:text-base text-gray-500 mt-4 max-w-xl mx-auto">
-            A team of experts shaping elegance and excellence in healthcare and pharma.
+          <div className="flex items-center justify-center gap-2 mb-4">
+            <div className="h-px w-12 bg-gradient-to-r from-transparent to-[#1FA58A]" />
+            <div className="w-2 h-2 rounded-full bg-[#1FA58A]" />
+            <div className="h-px w-12 bg-gradient-to-l from-transparent to-[#1FA58A]" />
+          </div>
+          <p className="text-gray-500 text-base max-w-lg mx-auto leading-relaxed">
+            A distinguished panel of experts shaping excellence in healthcare and pharma.
           </p>
         </div>
 
-        {/* Slider */}
-        <div className="relative">
+        {/* Slider area */}
+        <div className="relative flex items-center justify-center">
 
-          {/* Desktop: show 3 cards side by side */}
-          <div className="hidden sm:flex items-center justify-center gap-6">
-            {getVisible().map((idx, pos) => {
+          {/* Prev button */}
+          <button
+            onClick={prev}
+            className="absolute left-0 z-30 flex items-center justify-center w-11 h-11 rounded-full transition-all duration-300 group"
+            style={{
+              background: "white",
+              boxShadow: "0 4px 20px rgba(1,93,103,0.15)",
+              border: "1px solid rgba(1,93,103,0.12)",
+            }}
+            aria-label="Previous"
+          >
+            <ChevronLeft
+              className="h-5 w-5 transition-transform duration-200 group-hover:-translate-x-0.5"
+              style={{ color: "#015D67" }}
+            />
+          </button>
+
+          {/* Cards track */}
+          <div className="flex items-center justify-center gap-5 w-full px-14">
+            {visible.map((idx, pos) => {
               const member = juryMembers[idx];
               const isCenter = pos === 1;
+
               return (
                 <div
-                  key={idx}
+                  key={`${idx}-${pos}`}
                   onClick={() => !isCenter && goTo(idx)}
-                  className={`
-                    relative flex flex-col items-center rounded-2xl overflow-hidden transition-all duration-500 cursor-pointer
-                    ${isCenter
-                      ? "w-72 shadow-2xl scale-100 z-10 bg-white"
-                      : "w-56 shadow-md scale-90 opacity-60 hover:opacity-80 bg-white/80"
-                    }
-                  `}
+                  className="relative flex-shrink-0 rounded-2xl overflow-hidden transition-all duration-500"
+                  style={{
+                    width: isCenter ? "300px" : "220px",
+                    height: isCenter ? "380px" : "300px",
+                    cursor: isCenter ? "default" : "pointer",
+                    opacity: isCenter ? 1 : 0.7,
+                    transform: isCenter ? "scale(1)" : "scale(0.92)",
+                    boxShadow: isCenter
+                      ? "0 24px 60px rgba(1,93,103,0.22), 0 8px 24px rgba(1,93,103,0.12)"
+                      : "0 8px 24px rgba(0,0,0,0.08)",
+                    background: "#fff",
+                    zIndex: isCenter ? 10 : 5,
+                  }}
                 >
-                  {/* Image */}
-                  <div className={`w-full overflow-hidden ${isCenter ? "h-64" : "h-48"} transition-all duration-500`}>
-                    <img
-                      src={member.image}
-                      alt={member.name}
-                      className="w-full h-full object-cover object-top"
-                    />
-                  </div>
+                  {/* Photo */}
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-full h-full object-cover object-top transition-transform duration-700"
+                    style={{ transform: isCenter ? "scale(1.03)" : "scale(1)" }}
+                  />
 
-                  {/* Gradient overlay on image bottom */}
-                  <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#015D67]/90 to-transparent" />
+                  {/* Gradient overlay */}
+                  <div
+                    className="absolute inset-0"
+                    style={{
+                      background: isCenter
+                        ? "linear-gradient(to top, rgba(1,45,55,0.92) 0%, rgba(1,45,55,0.5) 40%, transparent 70%)"
+                        : "linear-gradient(to top, rgba(1,45,55,0.85) 0%, rgba(1,45,55,0.3) 50%, transparent 75%)",
+                    }}
+                  />
 
-                  {/* Text */}
-                  <div className="absolute bottom-0 inset-x-0 p-4 text-white">
-                    <h3 className={`font-bold leading-tight mb-0.5 ${isCenter ? "text-base" : "text-sm"}`}>
+                  {/* Text info */}
+                  <div className="absolute bottom-0 inset-x-0 p-5">
+                    {isCenter && (
+                      <div
+                        className="inline-block text-[10px] font-bold tracking-widest uppercase px-2.5 py-1 rounded-full mb-2"
+                        style={{
+                          background: "rgba(31,165,138,0.3)",
+                          color: "#7DDFCA",
+                          border: "1px solid rgba(31,165,138,0.3)",
+                          backdropFilter: "blur(8px)",
+                        }}
+                      >
+                        Jury Member
+                      </div>
+                    )}
+                    <h3
+                      className="font-bold leading-tight text-white mb-1"
+                      style={{ fontSize: isCenter ? "17px" : "13px" }}
+                    >
                       {member.name}
                     </h3>
-                    <p className={`text-white/80 leading-tight ${isCenter ? "text-xs" : "text-[10px]"}`}>
+                    <p
+                      className="leading-tight font-medium"
+                      style={{
+                        fontSize: isCenter ? "12px" : "10px",
+                        color: "rgba(255,255,255,0.75)",
+                      }}
+                    >
                       {member.designation}
                     </p>
-                    <p className={`text-white/60 leading-tight ${isCenter ? "text-[11px]" : "text-[9px]"}`}>
+                    <p
+                      className="leading-tight mt-0.5"
+                      style={{
+                        fontSize: isCenter ? "11px" : "9px",
+                        color: "rgba(125,223,202,0.85)",
+                      }}
+                    >
                       {member.organisation}
                     </p>
                   </div>
 
-                  {/* Active border */}
+                  {/* Active ring */}
                   {isCenter && (
-                    <div className="absolute inset-0 rounded-2xl ring-2 ring-[#1FA58A] pointer-events-none" />
+                    <div
+                      className="absolute inset-0 rounded-2xl pointer-events-none"
+                      style={{ boxShadow: "inset 0 0 0 2px rgba(31,165,138,0.6)" }}
+                    />
                   )}
                 </div>
               );
             })}
           </div>
 
-          {/* Mobile: single card */}
-          <div className="sm:hidden flex justify-center">
-            <div className="relative w-72 rounded-2xl overflow-hidden shadow-2xl bg-white">
-              <div className="h-72 w-full overflow-hidden">
-                <img
-                  src={juryMembers[current].image}
-                  alt={juryMembers[current].name}
-                  className="w-full h-full object-cover object-top"
-                />
-              </div>
-              <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-[#015D67]/90 to-transparent" />
-              <div className="absolute bottom-0 inset-x-0 p-4 text-white">
-                <h3 className="font-bold text-base leading-tight mb-0.5">
-                  {juryMembers[current].name}
-                </h3>
-                <p className="text-white/80 text-xs leading-tight">
-                  {juryMembers[current].designation}
-                </p>
-                <p className="text-white/60 text-[11px] leading-tight">
-                  {juryMembers[current].organisation}
-                </p>
-              </div>
-              <div className="absolute inset-0 rounded-2xl ring-2 ring-[#1FA58A] pointer-events-none" />
-            </div>
-          </div>
-
-          {/* Prev / Next buttons */}
-          <button
-            onClick={prev}
-            className="absolute left-0 sm:-left-4 top-1/2 -translate-y-1/2 z-20 bg-white shadow-lg rounded-full p-2.5 hover:bg-[#015D67] hover:text-white text-[#015D67] transition-all duration-300 border border-[#015D67]/10"
-            aria-label="Previous"
-          >
-            <ChevronLeft className="h-5 w-5" />
-          </button>
+          {/* Next button */}
           <button
             onClick={next}
-            className="absolute right-0 sm:-right-4 top-1/2 -translate-y-1/2 z-20 bg-white shadow-lg rounded-full p-2.5 hover:bg-[#015D67] hover:text-white text-[#015D67] transition-all duration-300 border border-[#015D67]/10"
+            className="absolute right-0 z-30 flex items-center justify-center w-11 h-11 rounded-full transition-all duration-300 group"
+            style={{
+              background: "white",
+              boxShadow: "0 4px 20px rgba(1,93,103,0.15)",
+              border: "1px solid rgba(1,93,103,0.12)",
+            }}
             aria-label="Next"
           >
-            <ChevronRight className="h-5 w-5" />
+            <ChevronRight
+              className="h-5 w-5 transition-transform duration-200 group-hover:translate-x-0.5"
+              style={{ color: "#015D67" }}
+            />
           </button>
         </div>
 
         {/* Dot indicators */}
-        <div className="flex justify-center gap-2 mt-8">
+        <div className="flex justify-center items-center gap-2.5 mt-10">
           {juryMembers.map((_, i) => (
             <button
               key={i}
               onClick={() => goTo(i)}
-              className={`rounded-full transition-all duration-300 ${
-                i === current
-                  ? "bg-[#015D67] w-6 h-2.5"
-                  : "bg-[#015D67]/25 w-2.5 h-2.5 hover:bg-[#015D67]/50"
-              }`}
+              className="transition-all duration-300 rounded-full"
+              style={{
+                width: i === current ? "28px" : "8px",
+                height: "8px",
+                background:
+                  i === current
+                    ? "linear-gradient(90deg, #1FA58A, #2e5b8e)"
+                    : "rgba(1,93,103,0.2)",
+              }}
               aria-label={`Go to member ${i + 1}`}
             />
           ))}
         </div>
+
+        {/* Member count */}
+        <p className="text-center mt-4 text-xs font-medium" style={{ color: "rgba(1,93,103,0.4)" }}>
+          {current + 1} / {total}
+        </p>
       </div>
+
+      {/* Decorative bottom border */}
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2e5b8e]/20 to-transparent" />
     </section>
   );
 };

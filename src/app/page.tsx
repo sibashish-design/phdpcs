@@ -6,6 +6,9 @@ import Hero from "@/components/Hero";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import AboutSection from "@/components/AboutSection";
+import JewelryMembersSlider from "@/components/JewelryMembersSlider";
+
+
 
 const animationKeyframes = `
   @keyframes float {
@@ -162,7 +165,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-
+      <JewelryMembersSlider />   {/* ← add this */}
       <AboutSection />
       <FAQSection />
     </div>
