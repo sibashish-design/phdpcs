@@ -275,7 +275,7 @@ export default function CheckoutPage() {
         return false;
       }
     }
-    if (!paymentScreenshot) {
+    if (total > 0 && !paymentScreenshot) {
       toast.error("Please upload your payment screenshot");
       return false;
     }
@@ -306,15 +306,15 @@ export default function CheckoutPage() {
       const orderDate = new Date().toLocaleString();
 
       let paymentScreenshotUrl = null;
-      if (paymentScreenshot) {
-        const upload = await uploadToCloudinary(paymentScreenshot);
-        if (!upload) {
-          toast.error("Failed to upload payment screenshot");
-          setIsSubmitting(false);
-          return;
-        }
-        paymentScreenshotUrl = upload;
-      }
+      if (paymentScreenshot && total > 0) {
+      const upload = await uploadToCloudinary(paymentScreenshot);
+      if (!upload) {
+      toast.error("Failed to upload payment screenshot");
+      setIsSubmitting(false);
+      return;
+  }
+  paymentScreenshotUrl = upload;
+}
 
       const emailData: EmailOrderData = {
         customerName: `${userDetails.firstName} ${userDetails.lastName}`,
@@ -332,7 +332,7 @@ export default function CheckoutPage() {
       const emailSent = await sendOrderEmail(emailData);
       if (emailSent) {
         clearCart();
-        toast.success("Order submitted successfully! Email sent to phdccihits2025@gmail.com");
+        toast.success("Order submitted successfully! Email sent to phdupcs2026@gmail.com");
         router.push("/order-confirmation");
       } else {
         toast.error("Failed to send order email. Please try again or contact support.");
@@ -397,7 +397,7 @@ export default function CheckoutPage() {
               </svg>
               <span>
                 <strong>Order Confirmation:</strong> Your order details will be automatically sent to{" "}
-                <strong>phdccihits2025@gmail.com</strong> for processing.
+                <strong>phdupcs2026@gmail.com</strong> for processing.
               </span>
             </p>
           </div>
@@ -665,7 +665,7 @@ export default function CheckoutPage() {
                       </div>
                       <p className="text-xs text-gray-600 text-center pt-3 border-t border-gray-100">
                         By placing this order, you agree to our terms and conditions. Your order details will be sent to{" "}
-                        <strong>phdccihits2025@gmail.com</strong> for processing.
+                        <strong>phdupcs2026@gmail.com</strong> for processing.
                       </p>
                     </div>
                   </div>
