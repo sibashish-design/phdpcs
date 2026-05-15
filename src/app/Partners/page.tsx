@@ -52,8 +52,74 @@ const PartnersPage = () => {
       <style jsx global>
         {partnerSliderStyles}
       </style>
+      
       <div className="bg-gradient-to-b from-white to-gray-100 min-h-screen py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Association Partners Section */}
+<div className="text-center mb-16">
+            <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[#1FA58A] to-[#145C52]">
+              Our 2026 Partners
+            </h1>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+             
+            </p>
+
+  <div className="flex flex-wrap justify-center gap-10">
+    {/* FOPE */}
+    <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 flex flex-col items-center w-[260px]">
+      <h3 className="text-xl font-bold text-gray-800">
+                      Association Partner
+      </h3>
+      <div className="h-40 w-full flex items-center justify-center mb-4">
+        <img
+          src="/fope.png"
+          alt="FOPE"
+          className="max-h-full max-w-full object-contain"
+        />
+      </div>
+      <h3 className="text-base font-bold text-gray-800 text-center">
+        
+        Federation Of Pharma Entrepreneurs (FOPE)
+      </h3>
+    </div>
+
+    {/* AIMED */}
+    <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 flex flex-col items-center w-[260px]">
+      <h3 className="text-xl font-bold text-gray-800">
+                      Association Partner
+      </h3>
+      <div className="h-40 w-full flex items-center justify-center mb-4">
+        <img
+          src="/aimed.png"
+          alt="AIMED"
+          className="max-h-full max-w-full object-contain"
+        />
+      </div>
+      <h3 className="text-base font-bold text-gray-800 text-center">
+        AIMED
+      </h3>
+    </div>
+
+    {/* GB Equipment Partner */}
+    <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 flex flex-col items-center w-[260px]">
+      <h3 className="text-xl font-bold text-gray-800">
+                      Platinum Partner
+      </h3>
+      <div className="h-40 w-full flex items-center justify-center mb-4">
+        <img
+          src="/gbequipment.png"
+          alt="GB Equipment"
+          className="max-h-full max-w-full object-contain"
+        />
+      </div>
+      <h3 className="text-base font-bold text-gray-800 text-center">
+        GB Equipment
+      </h3>
+    </div>
+  </div>
+</div>
+
+
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[#1FA58A] to-[#145C52]">
               Our 2025 Partners
