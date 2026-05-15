@@ -64,6 +64,13 @@ const partnerSliderStyles = `
     transform: translateY(-4px);
     box-shadow: 0 12px 32px rgba(31,165,138,0.15);
   }
+
+  @media (max-width: 640px) {
+    .partners-slider .swiper-button-next,
+    .partners-slider .swiper-button-prev {
+      display: none;
+    }
+  }
 `;
 
 const assocPartners = [
