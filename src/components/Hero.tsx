@@ -31,11 +31,11 @@ const Hero = () => {
           </div>
 
           {/* PHDCCI Logo */}
-          <div className="flex items-center justify-center w-[96px] h-[97px]">
+          <div className="flex items-center justify-center w-[100px] h-[100px]">
             <img
               src="/phdcci-logo1.png"
               alt="PHDCCI Logo"
-              className="w-[96px] h-[97px] object-contain drop-shadow-lg"
+              className="w-[100px] h-[100px] object-contain drop-shadow-lg"
             />
           </div>
         </div>
@@ -53,11 +53,11 @@ const Hero = () => {
           </div>
 
           {/* PHDCCI Logo */}
-          <div className="flex items-center justify-center w-[96px] h-[97px]">
+          <div className="flex items-center justify-center w-[100px] h-[100px]">
             <img
               src="/phdcci-logo1.png"
               alt="PHDCCI Logo"
-              className="w-[96px] h-[97px] object-contain drop-shadow-lg"
+              className="w-[100px] h-[100px] object-contain drop-shadow-lg"
             />
           </div>
         </div>
