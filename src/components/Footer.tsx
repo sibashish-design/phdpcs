@@ -24,17 +24,17 @@ const Footer = () => {
     {
       name: "Facebook",
       icon: <Facebook className="w-5 h-5" />,
-      href: "https://www.facebook.com/phdcci1905",
+      href: "https://www.facebook.com/profile.php?id=61574008583245",
     },
     {
       name: "LinkedIn",
       icon: <Linkedin className="w-5 h-5" />,
-      href: "https://www.facebook.com/phdcci1905",
+      href: "https://www.linkedin.com/company/phd-chamber-of-commerce-and-industry/posts/?feedView=all",
     },
     {
       name: "Instagram",
       icon: <Instagram className="w-5 h-5" />,
-      href: "https://www.instagram.com/p/DLmXzady9RL",
+      href: "https://www.instagram.com/phdcciuttarakhand/",
     },
   ];
 
