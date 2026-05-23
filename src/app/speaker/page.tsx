@@ -20,7 +20,7 @@ const speakers = [
   {
     id: 3,
     name: "Mr. Sumit Agarwal",
-    title: "Co-Chair PHDCCI and Event Chair",
+    title: "Co-Chair PHDCCI",
     bio: "Director Axa Parenterals Ltd.",
     image: "/speaker003.png",
   },
@@ -30,6 +30,14 @@ const speakers = [
     title: "Director, Ayurvedic & Unani Service, Uttarakhand",
     bio: "",
     image: "/vijaybros.png",
+  },
+
+  {
+    id: 8, // ✅ fixed unique id
+    name: "Mr Amit Khaneja",
+    title: "Co-Chair PHDCCI",
+    bio: "Director,  MNT BUILDCON PRIVATE LIMITED",
+    image: "/Amit Khaneja.jpeg",
   },
 ];
 
