@@ -54,6 +54,12 @@ const juryMembers: JuryMember[] = [
     organisation: "Haryana",
     image: "/jurymember6.png",
   },
+  {
+    name: "Dr. Nischal Naveen",
+    designation: "Chairman",
+    organisation: "Voice of Healthcare",
+    image: "/jurymember7.png",
+  }
 ];
 
 const TOTAL = juryMembers.length;
