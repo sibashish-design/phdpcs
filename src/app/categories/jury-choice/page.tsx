@@ -6,7 +6,7 @@ import SearchBar from "@/components/SearchBar";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
-const TRACK = "Jury Choice Recognitions";
+const TRACK = "Distinguished Achievers' Citations";
 
 export default function JuryChoicePage() {
   const all = getProductsByTrack(TRACK);
@@ -26,7 +26,7 @@ export default function JuryChoicePage() {
         </Link>
         <div className="text-center mb-8">
           <h1 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-            Jury Choice Recognitions
+            Distinguished Achievers Citations
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Special recognitions awarded by our distinguished jury for outstanding achievements.
