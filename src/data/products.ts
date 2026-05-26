@@ -78,7 +78,7 @@ const products: Product[] = [
     id: "a2",
     code: "A2",
     track: "Track A – Public Health Recognitions",
-    name: "Best District Hospital Samman",
+    name: "District Hospital Samman",
     shortDescription:
       "For government-run District Hospitals under the State Department of Health and Family Welfare with strong OPD/IPD performance, clinical outcomes, and patient feedback.",
     fullDescription:
@@ -108,7 +108,7 @@ const products: Product[] = [
     id: "a3",
     code: "A3",
     track: "Track A – Public Health Recognitions",
-    name: "Best Community Health Centre / Sub-Divisional Hospital Samman",
+    name: " Community Health Centre / Sub-Divisional Hospital Samman",
     shortDescription:
       "For government-run CHCs and Sub-Divisional Hospitals demonstrating excellence in referral, institutional delivery, specialist services, and patient care.",
     fullDescription:
@@ -138,7 +138,7 @@ const products: Product[] = [
     id: "a4",
     code: "A4",
     track: "Track A – Public Health Recognitions",
-    name: "Best Primary Health Centre Samman",
+    name: " Primary Health Centre Samman",
     shortDescription:
       "For government-run PHCs under the National Health Mission with strong immunisation coverage, ANC/PNC records, and essential medicines availability.",
     fullDescription:
@@ -168,7 +168,7 @@ const products: Product[] = [
     id: "a5",
     code: "A5",
     track: "Track A – Public Health Recognitions",
-    name: "Best Ayushman Arogya Mandir Samman",
+    name: " Ayushman Arogya Mandir Samman",
     shortDescription:
       "For Ayushman Arogya Mandirs (Health and Wellness Centres) functioning under the NHM with strong ABHA enrolment, NCD screening, and wellness programme records.",
     fullDescription:
@@ -445,9 +445,9 @@ const products: Product[] = [
     id: "c1",
     code: "C1",
     track: "Track C – AYUSH Recognitions",
-    name: "Best Wellness Initiative Samman",
+    name: "Wellness Excellence Samman",
     shortDescription:
-      "For AYUSH wellness centres, yoga studios, naturopathy centres, and wellness resorts with documented client reach, staff qualifications, and satisfaction data.",
+      "Celebrates a documented wellness programme's outcomes — not a contest between all wellness centres.",
     fullDescription:
       "Open to AYUSH wellness centres, yoga studios, naturopathy centres, and wellness resorts. Nominees must demonstrate a structured wellness initiative with documented client intake records, satisfaction surveys or testimonials from at least 10 clients, and a list of certified instructors or therapists.",
     price: 3500,
@@ -474,9 +474,9 @@ const products: Product[] = [
     id: "c2",
     code: "C2",
     track: "Track C – AYUSH Recognitions",
-    name: "Best Yoga Instructor Samman",
+    name: "Distinguished Yoga Practitioner Samman",
     shortDescription:
-      "For certified Yoga Instructors from government programmes or private practice with minimum 3 years of experience, recognised certification, and participant testimonials.",
+      "Distinguished signals earned recognition by an independent jury; Practitioner carries more professional weight than Instructor in an awards context.",
     fullDescription:
       "Open to certified Yoga Instructors from government-run programmes or private practice with a minimum of 3 years of teaching experience. A recognised certification from QCI, the Yoga Certification Board, or an equivalent body is required, along with participant feedback from at least 10 individuals.",
     price: 3500,
@@ -505,9 +505,9 @@ const products: Product[] = [
     id: "c3",
     code: "C3",
     track: "Track C – AYUSH Recognitions",
-    name: "Best Panchakarma Therapist Samman",
+    name: "Distinguished Panchakarma Practitioner Samman",
     shortDescription:
-      "For certified Panchakarma Therapists in government or private AYUSH settings with a BAMS or equivalent qualification and documented patient outcomes.",
+      "Consistent construct with C2 — the Distinguished Practitioner pattern works cleanly across all individual AYUSH recognitions.",
     fullDescription:
       "Open to certified Panchakarma Therapists working in government or private AYUSH hospitals, clinics, or wellness centres. Nominees must hold a BAMS degree or equivalent AYUSH qualification and a Panchakarma specialisation certificate, and must provide patient testimonials with written consent from at least 5 patients.",
     price: 3500,
@@ -536,9 +536,9 @@ const products: Product[] = [
     id: "c4",
     code: "C4",
     track: "Track C – AYUSH Recognitions",
-    name: "Best AYUSH Doctor – Government Sector Samman",
+    name: " AYUSH Clinical Excellence Samman – Government Service",
     shortDescription:
-      "For AYUSH doctors employed by government departments or hospitals (all systems eligible) with strong patient outcome records and a CMO/departmental recommendation.",
+      "Clinical Excellence is verifiable through patient records and outcomes. Government Service frames the commitment, not the sector label.",
     fullDescription:
       "Open to AYUSH doctors employed by government departments, hospitals, or Ayushman Arogya Mandirs. All AYUSH systems are eligible — nominees must specify their system in the nomination form. A letter of recommendation from the departmental head or CMO is mandatory.",
     price: 3500,
@@ -567,9 +567,9 @@ const products: Product[] = [
     id: "c5",
     code: "C5",
     track: "Track C – AYUSH Recognitions",
-    name: "Best AYUSH Doctor – Private Sector Samman",
+    name: "AYUSH Clinical Excellence Samman – Private Practice",
     shortDescription:
-      "For AYUSH doctors in private practice or private hospitals with minimum 5 years of clinical experience, patient testimonials, and council registration.",
+      "Identical construct to C4 — the only variable is the practice context, keeping both recognitions parallel and comparable.",
     fullDescription:
       "Open to AYUSH doctors in private practice or employed by private AYUSH hospitals, with a minimum of 5 years of clinical experience. All AYUSH systems are eligible. Nominees must hold State AYUSH Medical Council registration and provide at least 5 patient testimonials with written consent.",
     price: 3500,
@@ -596,9 +596,9 @@ const products: Product[] = [
     id: "c6",
     code: "C6",
     track: "Track C – AYUSH Recognitions",
-    name: "Best AYUSH Healthcare Institution Samman",
+    name: "AYUSH Centre of Excellence Samman",
     shortDescription:
-      "For registered AYUSH hospitals (IPD) and clinics (OPD) with minimum 2 years of operation, patient load data, and qualified staff register.",
+      "Centre of Excellence is a globally understood institutional designation — it signals verified standards without claiming to rank every institution in the country.",
     fullDescription:
       "Open to registered AYUSH hospitals providing in-patient services (IPD) and AYUSH clinics providing out-patient services (OPD) with at least 2 years of operational history. Nominees must present patient load data for the last 12 months and a staff qualification register.",
     price: 5000,
@@ -683,9 +683,9 @@ const products: Product[] = [
     id: "c9",
     code: "C9",
     track: "Track C – AYUSH Recognitions",
-    name: "Best AYUSH Pharmacy Samman",
+    name: "AYUSH Pharmaceutical Excellence Samman",
     shortDescription:
-      "For licensed AYUSH pharmaceutical manufacturers compliant with Schedule T GMP, with quality testing reports and a signed no-sample-failure declaration.",
+      "Shifts focus to the manufacturing quality and compliance achievement the jury actually evaluates — GMP adherence, testing rigour, and regulatory clean record.",
     fullDescription:
       "Open to licensed AYUSH pharmaceutical manufacturers operating under State or Central AYUSH Manufacturing Licence with Schedule T GMP compliance. Nominees must provide a product list, GMP compliance certificate, quality testing reports from the last 12 months, and a signed no-sample-failure declaration.",
     price: 5000,
@@ -712,9 +712,9 @@ const products: Product[] = [
     id: "c10",
     code: "C10",
     track: "Track C – AYUSH Recognitions",
-    name: "Best AYUSH Entrepreneur Samman",
+    name: "AYUSH Entrepreneurial Achievement Samman",
     shortDescription:
-      "For founders or promoters of registered AYUSH manufacturing companies who have played a primary leadership role and demonstrated significant business growth.",
+      "Achievement is documented, time-specific, and jury-verifiable — it avoids the universal ranking claim while remaining powerfully aspirational.",
     fullDescription:
       "Open to founders or promoters of registered AYUSH manufacturing companies who have personally led the company's growth. CA-certified audited financial statements for the last 3 years, revenue growth data, and a description of the entrepreneurial journey are mandatory.",
     price: 5000,
@@ -741,9 +741,9 @@ const products: Product[] = [
     id: "c11",
     code: "C11",
     track: "Track C – AYUSH Recognitions",
-    name: "Best AYUSH Exporter Samman",
+    name: "AYUSH Export Excellence Samman",
     shortDescription:
-      "For registered AYUSH product exporters with documented export revenues for 2 financial years, an IEC certificate, and FSSAI or WHO-GMP export compliance.",
+      "Mirrors the existing Excellence in Global Representation naming used in Track D — creates consistency across manufacturing and AYUSH export recognitions.",
     fullDescription:
       "Open to registered AYUSH product exporters with documented export revenues for the preceding 2 financial years. Nominees must hold an IEC (Import Export Code) certificate and a FSSAI No Objection Certificate for export or a WHO-GMP export certificate. CA-certified export revenue data is mandatory.",
     price: 7500,
@@ -884,8 +884,8 @@ const products: Product[] = [
       "Manufacturing Licence — CDSCO or State Drug Licensing Authority",
       "Export revenue figures — FY 2023-24 and FY 2024-25 (CA-certified or audited P&L extract)",
       "Destination country and product category list — table format",
-      "No sample-failure declaration — signed on company letterhead",
-      "WHO-GMP certificate for export (if held) OR USFDA / EMA / MHRA approval letters",
+      "No License-Cancellation declaration — signed on company letterhead",
+      "WHO-GMP certificate for export (if held) OR USFDA / EMA / MHRA/Others approval letters",
     ],
     supportingOptionalDocs: [
       "International government procurement or supply agreements (redacted)",
@@ -915,8 +915,8 @@ const products: Product[] = [
       "Manufacturing Licence — CDSCO or State Drug Licensing Authority",
       "Export revenue figures — FY 2023-24 and FY 2024-25 (CA-certified or audited P&L extract)",
       "Destination country and product category list — table format",
-      "No sample-failure declaration — signed on company letterhead",
-      "WHO-GMP certificate for export (if held) OR USFDA / EMA / MHRA approval letters",
+      "No License-Cancellation declaration — signed on company letterhead",
+      "WHO-GMP certificate for export (if held) OR USFDA / EMA / MHRA/Others approval letters",
     ],
     supportingOptionalDocs: [
       "International government procurement or supply agreements (redacted)",
@@ -946,8 +946,8 @@ const products: Product[] = [
       "Manufacturing Licence — CDSCO or State Drug Licensing Authority",
       "Export revenue figures — FY 2023-24 and FY 2024-25 (CA-certified or audited P&L extract)",
       "Destination country and product category list — table format",
-      "No sample-failure declaration — signed on company letterhead",
-      "WHO-GMP certificate for export (if held) OR USFDA / EMA / MHRA approval letters",
+      "No License-Cancellation declaration — signed on company letterhead",
+      "WHO-GMP certificate for export (if held) OR USFDA / EMA / MHRA/Others approval letters",
     ],
     supportingOptionalDocs: [
       "International government procurement or supply agreements (redacted)",
@@ -975,7 +975,7 @@ const products: Product[] = [
     universalMandatoryDocs: UNIVERSAL_MANDATORY_DOCS,
     categoryMandatoryDocs: [
       "Manufacturing Licence — CDSCO or State Drug Licensing Authority",
-      "Current GMP certificate — WHO-GMP, Schedule M compliance, or USFDA-approved facility letter",
+      "Current GMP certificate — WHO-GMP, Schedule M compliance, USFDA-approved facility letter and Others",
       "Last 2 internal QA audit reports with corrective action records",
       "No sample-failure declaration — signed on company letterhead",
       "Stability study summary for key products (from in-house or NABL-accredited lab)",
@@ -1020,9 +1020,9 @@ const products: Product[] = [
     id: "d5",
     code: "D5",
     track: "Track D – Healthcare Manufacturers Recognitions",
-    name: "Best In-House Testing and Laboratory Facility Samman",
+    name: " In-House Laboratory Excellence Samman",
     shortDescription:
-      "For registered manufacturers with documented in-house testing facilities. Third-party-only testing is not eligible. MSMEs especially encouraged.",
+      "Recognises the capability, infrastructure, and rigour of a verifiable in-house facility — something the jury can directly assess from submitted evidence.",
     fullDescription:
       "Open to all registered manufacturers with documented in-house testing facilities. Manufacturers that rely exclusively on third-party testing are not eligible. MSMEs are especially encouraged to apply. Nominees must provide an itemised equipment inventory and the last drug inspector or CDSCO inspection report for the laboratory.",
     price: 3500,
@@ -1109,9 +1109,9 @@ const products: Product[] = [
     id: "d8",
     code: "D8",
     track: "Track D – Healthcare Manufacturers Recognitions",
-    name: "Best Qualified Technical Staff Samman",
+    name: "Technical Workforce Excellence Samman",
     shortDescription:
-      "Open to all registered pharma, AYUSH, and medical device manufacturers. Recognises a Qualified Persons Register, training logs, and low attrition in technical roles.",
+      "Broader and more accurate — the recognition covers qualified persons, training programmes, attrition rates, and career mobility, not just staff qualifications alone.",
     fullDescription:
       "Open to all registered pharma, AYUSH, and medical device manufacturers of any size. Focuses on the qualifications and continuous professional development of technical staff. Nominees must provide a Qualified Persons Register (QPR) and training logs for the last 12 months, plus representative qualification certificates.",
     price: 3500,
@@ -1544,7 +1544,7 @@ const products: Product[] = [
   {
     id: "j1",
     code: "J1",
-    track: "Jury Choice Recognitions",
+    track: "Distinguished Achievers' Citations",
     name: "Private Medical Institution of the Year",
     shortDescription:
       "Jury Choice recognition. Not open for direct nomination. Requires minimum 2 competitive nominations filed under Track B. The jury identifies recipients from the competitive nominee pool.",
@@ -1567,7 +1567,7 @@ const products: Product[] = [
   {
     id: "j2",
     code: "J2",
-    track: "Jury Choice Recognitions",
+    track: "Distinguished Achievers' Citations",
     name: "Private Medical College of the Year",
     shortDescription:
       "Jury Choice recognition. Not open for direct nomination. Requires minimum 2 competitive nominations filed under Track B.",
@@ -1590,7 +1590,7 @@ const products: Product[] = [
   {
     id: "j3",
     code: "J3",
-    track: "Jury Choice Recognitions",
+    track: "Distinguished Achievers' Citations",
     name: "AYUSH Institution of the Year",
     shortDescription:
       "Jury Choice recognition. Not open for direct nomination. Requires minimum 2 competitive nominations filed under Track C.",
@@ -1613,7 +1613,7 @@ const products: Product[] = [
   {
     id: "j4",
     code: "J4",
-    track: "Jury Choice Recognitions",
+    track: "Distinguished Achievers' Citations",
     name: "AYUSH Medical College of the Year",
     shortDescription:
       "Jury Choice recognition. Not open for direct nomination. Requires minimum 2 competitive nominations filed under Track C.",
@@ -1636,7 +1636,7 @@ const products: Product[] = [
   {
     id: "j5",
     code: "J5",
-    track: "Jury Choice Recognitions",
+    track: "Distinguished Achievers' Citations",
     name: "Nutraceutical Company of the Year",
     shortDescription:
       "Jury Choice recognition. Not open for direct nomination. Requires minimum 2 competitive nominations filed under Track E.",
@@ -1659,7 +1659,7 @@ const products: Product[] = [
   {
     id: "j6",
     code: "J6",
-    track: "Jury Choice Recognitions",
+    track: "Distinguished Achievers' Citations",
     name: "Lifetime Achievement – Doctor in Government Service",
     shortDescription:
       "Jury Choice recognition. Organisations or industry bodies may submit a Letter of Recommendation and Detailed Profile to PHDCCI. Not open for direct self-nomination.",
@@ -1684,7 +1684,7 @@ const products: Product[] = [
   {
     id: "j7",
     code: "J7",
-    track: "Jury Choice Recognitions",
+    track: "Distinguished Achievers' Citations",
     name: "Lifetime Achievement – Doctor in Private Practice",
     shortDescription:
       "Jury Choice recognition. Organisations or industry bodies may submit a Letter of Recommendation and Detailed Profile to PHDCCI.",
@@ -1709,7 +1709,7 @@ const products: Product[] = [
   {
     id: "j8",
     code: "J8",
-    track: "Jury Choice Recognitions",
+    track: "Distinguished Achievers' Citations",
     name: "Lifetime Achievement – AYUSH Doctor (Government Service)",
     shortDescription:
       "Jury Choice recognition. Organisations or industry bodies may submit a Letter of Recommendation and Detailed Profile to PHDCCI.",
@@ -1734,7 +1734,7 @@ const products: Product[] = [
   {
     id: "j9",
     code: "J9",
-    track: "Jury Choice Recognitions",
+    track: "Distinguished Achievers' Citations",
     name: "Lifetime Achievement – AYUSH Doctor (Private Practice)",
     shortDescription:
       "Jury Choice recognition. Organisations or industry bodies may submit a Letter of Recommendation and Detailed Profile to PHDCCI.",
@@ -1759,7 +1759,7 @@ const products: Product[] = [
   {
     id: "j10",
     code: "J10",
-    track: "Jury Choice Recognitions",
+    track: "Distinguished Achievers' Citations",
     name: "Pioneer of Nutraceuticals",
     shortDescription:
       "Jury Choice recognition. Organisations or industry bodies may submit a Letter of Recommendation and Detailed Profile to PHDCCI.",
@@ -1793,7 +1793,7 @@ export const categories: string[] = [
   "Track D – Healthcare Manufacturers Recognitions",
   "Track E – Nutraceuticals Recognitions",
   "Cross-Track – Sustainability and Community Recognitions",
-  "Jury Choice Recognitions",
+  "Distinguished Achievers' Citations",
 ];
 
 // Convenience helpers
