@@ -146,13 +146,13 @@ export default function Home() {
               </div>
             </Link>
 
-            <Link href="/categories/jury-choice" className="group">
+            <Link href="/categories/Distinguished-Achievers'-Citations" className="group">
               <div className="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-105 h-full flex flex-col">
                 <div className="h-48 bg-gradient-to-r from-[#2e5b8e] to-[#60afaa] p-6 flex items-center justify-center">
-                  <img src="./jury.png" alt="Jury Choice Recognitions" className="w-full h-full object-cover opacity-90 group-hover:scale-110 transition-transform duration-300" />
+                  <img src="./jury.png" alt="Distinguished-Achievers'-Citations" className="w-full h-full object-cover opacity-90 group-hover:scale-110 transition-transform duration-300" />
                 </div>
                 <div className="p-5 flex-grow flex flex-col justify-between">
-                  <h3 className="text-xl font-bold text-[#2e5b8e] mb-2">Jury Choice Recognitions</h3>
+                  <h3 className="text-xl font-bold text-[#2e5b8e] mb-2">Distinguished Achievers Citations</h3>
                   <p className="text-sm text-gray-600 mb-4">Special recognitions awarded by our distinguished jury for outstanding achievements.</p>
                   <div className="mt-auto">
                     <span className="inline-flex items-center text-[#60afaa] font-medium group-hover:text-[#015D67]">
