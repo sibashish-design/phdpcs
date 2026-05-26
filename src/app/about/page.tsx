@@ -84,20 +84,20 @@ export default function AboutPage() {
       <div className="bg-gradient-to-r from-[#015D67] to-[#0284a8] text-white py-10">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           {/* Logo and Heading Section */}
-          <div className="flex flex-col md:flex-row justify-center items-center">
-            <div className="relative">
+          <div className="flex items-center gap-4 flex flex-col md:flex-row justify-center items-center">
+            <div className="shrink-0">
               <div>
                 <Image
                   src="/phdcci-logo1.png"
                   alt="PHDCCI Logo"
-                  width={130}
-                  height={130}
+                  width={150}
+                  height={150}
                   className="object-contain"
                 />
               </div>
             </div>
 
-            <div className="text-center md:text-left">
+            <div className="text-center md:text-left ">
               <div className="text-3xl sm:text-4xl md:text-5xl font-bold leading-snug">
                 About PHDCCI
               </div>
@@ -110,7 +110,7 @@ export default function AboutPage() {
          
 
           {/* Paragraph Content */}
-          <div className="space-y-6 text-base sm:text-lg md:text-xl leading-relaxed max-w-5xl mx-auto px-2">
+          <div className="mt-12 space-y-6 text-base sm:text-lg md:text-xl leading-relaxed max-w-5xl mx-auto px-2">
             <p>
              PHDCCI, as the Voice of Industry and Trade, represents a wide network of over 150,000 large, medium, and small enterprises. Leveraging its deep industry expertise and multi-sectoral engagement, the organisation continues to play a pivotal role in shaping policy dialogue, fostering innovation, and strengthening India’s economic growth trajectory.
             </p>

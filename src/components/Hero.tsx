@@ -22,20 +22,20 @@ const Hero = () => {
         <div className="hidden lg:flex items-center justify-center gap-8 w-full">
           
           {/* UK Gov Logo */}
-          <div className="flex items-center justify-center w-[96px] h-[97px]">
+          <div className="flex items-center justify-center w-[120px] h-[120px]">
             <img
               src="/assets/ukgov.png"
               alt="UK Government Logo"
-              className="w-[96px] h-[97px] object-contain drop-shadow-lg"
+              className="w-[120px] h-[120px] object-contain drop-shadow-lg"
             />
           </div>
 
           {/* PHDCCI Logo */}
-          <div className="flex items-center justify-center w-[100px] h-[100px]">
+          <div className="flex items-center justify-center w-[150px] h-[150px]">
             <img
               src="/phdcci-logo1.png"
               alt="PHDCCI Logo"
-              className="w-[100px] h-[100px] object-contain drop-shadow-lg"
+              className="w-[150px] h-[150px] object-contain drop-shadow-lg"
             />
           </div>
         </div>
