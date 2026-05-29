@@ -84,6 +84,15 @@ const assocPartners = [
   },
   {
     label: "Association Partner",
+    labelColor: "#1FA58A",
+    borderColor: "#1FA58A",
+    src: "/pharmaceutical manufacturer's association, roorkee.png",
+    alt: "PHARMA",
+    name: "Pharmaceutical Manufacturer's Association",
+  },
+  
+  {
+    label: "Association Partner",
     labelColor: "#145C52",
     borderColor: "#145C52",
     src: "/aimed.png",
