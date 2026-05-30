@@ -1,22 +1,36 @@
 "use client";
 /* eslint-disable @next/next/no-img-element */
 import React, { useState } from "react";
-import { ShoppingCart, Eye } from "lucide-react";
+import { ShoppingCart, Eye, Lock } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Product } from "@/types";
 import { useCart } from "@/contexts/CartContext";
 import { toast } from "sonner";
 import ProductDetailsModal from "./ProductDetailsModal";
 
+const DISTINGUISHED_TRACK = "Distinguished Achievers' Citations";
+
 interface ProductCardProps {
   product: Product;
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
-  const { addToCart } = useCart();
+  const { addToCart, items } = useCart();
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const isDistinguished = product.track === DISTINGUISHED_TRACK;
+
+  const nonDACartCount = items.filter(
+    (item) => item.track !== DISTINGUISHED_TRACK
+  ).length;
+
+  const isLocked = isDistinguished && nonDACartCount < 2;
+
   const handleAddToCart = () => {
+    if (isLocked) {
+      toast.error("🔒 Add at least 2 nominations from other categories first to unlock Distinguished Achievers' Citations.");
+      return;
+    }
     addToCart(product);
     toast.success(`${product.name} added to cart!`);
   };
@@ -94,10 +108,24 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           <div className="flex gap-1.5 mt-2">
             <button
               onClick={handleAddToCart}
-              className="flex-1 flex items-center justify-center gap-1 bg-[#015D67] text-white rounded-lg text-[10px] sm:text-xs font-semibold py-1.5 sm:py-2 hover:bg-[#015D67]/85 active:scale-95 transition-all"
+              title={isLocked ? "Add 2 nominations from other categories to unlock" : ""}
+              className={`flex-1 flex items-center justify-center gap-1 rounded-lg text-[10px] sm:text-xs font-semibold py-1.5 sm:py-2 active:scale-95 transition-all ${
+                isLocked
+                  ? "bg-slate-300 text-slate-500 cursor-not-allowed"
+                  : "bg-[#015D67] text-white hover:bg-[#015D67]/85"
+              }`}
             >
-              <ShoppingCart className="h-3 w-3 shrink-0" />
-              <span>Add</span>
+              {isLocked ? (
+                <>
+                  <Lock className="h-3 w-3 shrink-0" />
+                  <span>Locked</span>
+                </>
+              ) : (
+                <>
+                  <ShoppingCart className="h-3 w-3 shrink-0" />
+                  <span>Add</span>
+                </>
+              )}
             </button>
             <button
               onClick={() => setIsModalOpen(true)}
@@ -110,13 +138,13 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         </div>
       </div>
 
-  {isModalOpen && (
-  <ProductDetailsModal
-    product={product}
-    isOpen={isModalOpen}
-    onClose={() => setIsModalOpen(false)}
-  />
-)}
+      {isModalOpen && (
+        <ProductDetailsModal
+          product={product}
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+        />
+      )}
     </>
   );
 };

@@ -12,6 +12,7 @@ import {
   Users,
   Mic,
   Building,
+  BookOpen,
 } from "lucide-react";
 import { useCart } from "@/contexts/CartContext";
 import { Badge } from "@/components/ui/badge";
@@ -33,6 +34,7 @@ const Header = () => {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [brochureOpen, setBrochureOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -41,6 +43,16 @@ const Header = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Prevent background scroll when overlay is open
+  useEffect(() => {
+    if (brochureOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => { document.body.style.overflow = ""; };
+  }, [brochureOpen]);
 
   return (
     <>
@@ -94,7 +106,23 @@ const Header = () => {
             </nav>
 
             {/* Right icons */}
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-3">
+
+              {/* Brochure Button */}
+              <button
+                onClick={() => setBrochureOpen(true)}
+                className={clsx(
+                  "hidden md:flex items-center gap-2 px-4 py-2 rounded-xl font-semibold text-sm",
+                  "bg-amber-500 hover:bg-amber-400 text-white",
+                  "border border-amber-400/50 hover:border-amber-300",
+                  "shadow-md hover:shadow-amber-500/30",
+                  "transform hover:-translate-y-1 hover:scale-105 transition-all duration-300"
+                )}
+              >
+                <BookOpen className="w-4 h-4" />
+                Brochure
+              </button>
+
               <Link href="/cart">
                 <Button
                   size="icon"
@@ -135,7 +163,47 @@ const Header = () => {
         </div>
       </header>
 
-      
+      {/* ── PDF Brochure Overlay ── */}
+      {brochureOpen && (
+        <div
+          className="fixed inset-0 z-[100] flex flex-col bg-black/80 backdrop-blur-sm"
+          onClick={(e) => { if (e.target === e.currentTarget) setBrochureOpen(false); }}
+        >
+          {/* Toolbar */}
+          <div className="flex items-center justify-between px-4 sm:px-6 py-3 bg-[#061a1c] border-b border-white/10 shrink-0">
+            <div className="flex items-center gap-3">
+              <BookOpen className="w-5 h-5 text-amber-400" />
+              <span className="text-white font-semibold text-sm sm:text-base">
+                PHDCCI UPHACS 2026 — Brochure
+              </span>
+            </div>
+            <div className="flex items-center gap-2">
+              
+                <button
+  onClick={() => window.open("/PHDCCI_UPHACS_2026_Concept_and_Categories_REVISED.pdf", "_blank")}
+  className={"flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-amber-500 text-white text-xs font-semibold transition-all duration-200"}
+>
+  Download
+</button>
+              <button
+                onClick={() => setBrochureOpen(false)}
+                className="flex items-center justify-center w-8 h-8 rounded-lg bg-white/10 hover:bg-white/20 text-white transition-all duration-200"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            </div>
+          </div>
+
+          {/* PDF iframe */}
+          <div className="flex-1 overflow-hidden">
+            <iframe
+              src="/PHDCCI_UPHACS_2026_Concept_and_Categories_REVISED.pdf"
+              className="w-full h-full"
+              title="PHDCCI UPHACS 2026 Brochure"
+            />
+          </div>
+        </div>
+      )}
 
       {/* Full Screen Mobile Menu */}
       <div
@@ -183,6 +251,20 @@ const Header = () => {
                 </Link>
               );
             })}
+
+            {/* Brochure button in mobile menu */}
+            <button
+              onClick={() => { setMobileOpen(false); setBrochureOpen(true); }}
+              className={clsx(
+                "flex items-center gap-4 px-6 py-5 rounded-2xl transition-all duration-500",
+                "text-white font-bold text-lg drop-shadow-lg",
+                "bg-amber-500/30 hover:bg-amber-500/50 border border-amber-400/40 hover:border-amber-300/60",
+                "transform hover:scale-105 hover:-translate-y-1"
+              )}
+            >
+              <BookOpen className="w-6 h-6" />
+              <span>Brochure</span>
+            </button>
           </nav>
         </div>
       </div>

@@ -6,6 +6,9 @@ import CategoryFilter from '@/components/CategoryFilter';
 import SearchBar from '@/components/SearchBar';
 import products from '@/data/products';
 import { useSearchParams } from 'next/navigation';
+import { Lock } from 'lucide-react';
+
+const DISTINGUISHED_TRACK = "Distinguished Achievers' Citations";
 
 function ProductsWithSearch({ setSelectedCategory }: { setSelectedCategory: (c: string) => void }) {
   const searchParams = useSearchParams();
@@ -65,6 +68,18 @@ export default function ProductsPage() {
           {selectedCategory !== 'All' && ` in ${selectedCategory}`}
           {searchTerm && ` matching "${searchTerm}"`}
         </p>
+
+        {/* Distinguished Achievers notice */}
+        {(selectedCategory === DISTINGUISHED_TRACK || selectedCategory === 'All') && (
+          <div className="flex items-start gap-3 bg-amber-50 border border-amber-300 rounded-xl px-4 py-3 mb-5 sm:mb-6 text-sm text-amber-800">
+            <Lock className="h-4 w-4 mt-0.5 shrink-0 text-amber-600" />
+            <p>
+              <strong>Distinguished Achievers&apos; Citations</strong> are automatically unlocked when you add{' '}
+              <strong>any 2 nominations from other categories</strong> to your cart. Once eligible, you can freely
+              select from the Distinguished Achievers&apos; Citations options below.
+            </p>
+          </div>
+        )}
 
         {/* Grid — 2 cols on mobile, 3 on md, 4 on xl */}
         {filteredProducts.length > 0 ? (
