@@ -86,6 +86,14 @@ const assocPartners = [
     label: "Association Partner",
     labelColor: "#1FA58A",
     borderColor: "#1FA58A",
+    src: "/DMA-1.png",
+    alt: "DMAI",
+    name: "Drug Manufacturers Association of India (DMAI)",
+  },
+  {
+    label: "Association Partner",
+    labelColor: "#1FA58A",
+    borderColor: "#1FA58A",
     src: "/pharmaceutical manufacturer's association, roorkee.png",
     alt: "PHARMA",
     name: "Pharmaceutical Manufacturer's Association",
@@ -106,6 +114,22 @@ const assocPartners = [
     src: "/gbequipment.png",
     alt: "GB Equipment",
     name: "GB Equipment",
+  },
+  {
+    label: "Academic Partner",
+    labelColor: "#4b6c3e",
+    borderColor: "#4b6c3e",
+    src: "/DIT Uni.jpeg",
+    alt: "DIT University",
+    name: "DIT University",
+  },
+  {
+    label: "Silver Partner",
+    labelColor: "#4b6c3e",
+    borderColor: "#4b6c3e",
+    src: "/Walter Bushnell.jpeg",
+    alt: "Walter Bushnell",
+    name: "Walter Bushnell",
   },
 ];
 
