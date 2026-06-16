@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
-  ShoppingCart,
   Menu,
   X,
   Home,
@@ -14,8 +13,8 @@ import {
   Building,
   BookOpen,
 } from "lucide-react";
-import { useCart } from "@/contexts/CartContext";
-import { Badge } from "@/components/ui/badge";
+
+
 import { Button } from "@/components/ui/button";
 import clsx from "clsx";
 import Image from "next/image";
@@ -29,7 +28,7 @@ const navLinks = [
 ];
 
 const Header = () => {
-  const { itemCount } = useCart();
+
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -122,20 +121,7 @@ const Header = () => {
                 Brochure
               </button>
 
-              <Link href="/cart">
-                <Button
-                  size="icon"
-                  variant="ghost"
-                  className="relative hover:bg-white/20 hover:backdrop-blur-sm hover:shadow-lg hover:shadow-white/20 transform hover:-translate-y-1 hover:scale-105 transition-all duration-500 border border-transparent hover:border-white/30 rounded-xl"
-                >
-                  <ShoppingCart className="w-6 h-6 text-white hover:text-white/80 transition-colors duration-300 drop-shadow-sm" />
-                  {itemCount > 0 && (
-                    <Badge className="absolute -top-1.5 -right-1.5 h-5 w-5 rounded-full text-xs p-0 bg-red-500 text-white">
-                      {itemCount}
-                    </Badge>
-                  )}
-                </Button>
-              </Link>
+            
 
               <Button
                 size="icon"
