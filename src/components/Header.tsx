@@ -26,7 +26,6 @@ const navLinks = [
   { name: "Speaker", href: "/speaker", icon: Mic },
   { name: "Partners", href: "/Partners", icon: Building },
   { name: "Contact Us", href: "/contact", icon: Users },
-  { name: "Nomination Catgories", href: "/products", icon: ShoppingCart },
 ];
 
 const Header = () => {
