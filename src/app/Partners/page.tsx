@@ -144,10 +144,10 @@ const assocPartners = [
     labelColor: "#4b6c3e",
     borderColor: "#4b6c3e",
     src: "/AXA.jpg",
-    alt: "Karoli Staffing Solutions Pvt Ltd",
-    name: "Karoli Staffing Solutions Pvt Ltd",
+    alt: "AXA Parenterals",
+    name: "AXA Parenterals",
   },
-
+];
 const partners2025 = [
   {
     label: "Supported by Ayurvedic & Unani Services Govt. of Uttarakhand",
