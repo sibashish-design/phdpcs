@@ -131,7 +131,22 @@ const assocPartners = [
     alt: "Walter Bushnell",
     name: "Walter Bushnell",
   },
-];
+  {
+    label: "Silver Partner",
+    labelColor: "#4b6c3e",
+    borderColor: "#4b6c3e",
+    src: "/KSS.jpeg",
+    alt: "Karoli Staffing Solutions Pvt Ltd",
+    name: "Karoli Staffing Solutions Pvt Ltd",
+  },
+  {
+    label: "Silver Partner",
+    labelColor: "#4b6c3e",
+    borderColor: "#4b6c3e",
+    src: "/AXA.jpg",
+    alt: "Karoli Staffing Solutions Pvt Ltd",
+    name: "Karoli Staffing Solutions Pvt Ltd",
+  },
 
 const partners2025 = [
   {
