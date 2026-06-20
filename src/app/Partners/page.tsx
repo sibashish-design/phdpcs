@@ -140,7 +140,7 @@ const assocPartners = [
     name: "Karoli Staffing Solutions Pvt Ltd",
   },
   {
-    label: "Silver Partner",
+    label: "Diamond Partner",
     labelColor: "#4b6c3e",
     borderColor: "#4b6c3e",
     src: "/AXA.jpg",
